@@ -1,17 +1,25 @@
-<h1>Costume <%= @costume.name %></h1>
-
-<p> <%= @costume.description %> </p>
-
-<%# BIG PIC à gauche
-
-LISTE: %>
-<ul>
-  <%# <li>Disponibilité : </li> %>
-  <li>Prix/jour : <%= @costume.prix %> </li>
-  <li>Tailles disponibles : <%= @costume.taille %> </li>
-  <li>Nom du loueur : <%= @costume.owner %></li>
-  <li>Adresse du retrait : <%= @costume.address %></li>
-</ul>
-<%# BOUTON : make a reservation %>
-
-
+<section>
+  <div class="container">
+    <div class="card">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card-block">
+            <h4 class="card-title"><%= @costume.name %></h4>
+              <ul>
+                <li class="card-text">Description : <%= @costume.description %> </li>
+                <li class="card-text">Prix/jour : <%= @costume.prix %> </li>
+                <li class="card-text">Tailles disponibles : <%= @costume.taille %> </li>
+                <li class="card-text">Nom du loueur : <%= @costume.owner %></li>
+                <li class="card-text">Adresse du retrait : <%= @costume.address %></li>
+              </ul>
+            <a href="#" class="btn btn-primary">Réserver ce costume</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-img-bottom">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
