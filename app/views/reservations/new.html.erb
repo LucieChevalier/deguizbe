@@ -1,0 +1,14 @@
+<div class="container-form">
+  <h1>Nouvelle réservation</h1>
+  <%= simple_form_for [@costume, @reservation] do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :??? %> # liste déroulante costume
+    <%= f.input :comment %>
+    <%= f.input :??? %> # afficher total price
+
+    <%= f.submit "Réserver", class: "btn btn-primary" %>
+  <% end %>
+</div>
