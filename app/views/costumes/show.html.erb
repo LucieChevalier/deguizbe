@@ -1,0 +1,17 @@
+<h1>Costume <%= @costume.name %></h1>
+
+<p> <%= @costume.description %> </p>
+
+<%# BIG PIC à gauche
+
+LISTE: %>
+<ul>
+  <%# <li>Disponibilité : </li> %>
+  <li>Prix/jour : <%= @costume.prix %> </li>
+  <li>Tailles disponibles : <%= @costume.taille %> </li>
+  <li>Nom du loueur : <%= @costume.owner %></li>
+  <li>Adresse du retrait : <%= @costume.address %></li>
+</ul>
+<%# BOUTON : make a reservation %>
+
+
