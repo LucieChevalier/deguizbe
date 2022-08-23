@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+
+.banner {
+  // background-size: 100%;
+  background-position: center;
+  weight: 100vh;
+  padding: 250px 0;
+}
+
+.banner h1 {
+  color: white;
+  font-size: 70px;
+  padding-bottom: 30px;
+}
+
+.banner h3 {
+  color: white;
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+
+
+$redlogo: #FF5A6D;
+$grey-background: #FBE1E4;
+$yellow: #EFB056;
+$orange: #D75944;
+$bleunight: #2D3C4B;
