@@ -1,9 +1,5 @@
 .footer {
-  // background: #F4F4F4;
-  // background: $grey-background;
-  background: $yellow;
-  // background: $orange;
-  // background: $bleunight;
+  background: $bleunight;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,8 +9,8 @@
 }
 
 .footer h2 {
-  color: $bleunight;
-  opacity: 0.15;
+  color: white;
+  opacity: 0.5;
 }
 
 .footer-links {
@@ -22,18 +18,20 @@
   align-items: center;
 }
 .footer-links a {
-  color: $bleunight;
-  opacity: 0.15;
+  color: white;
+  opacity: 0.5;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 18px;
   padding: 0px 10px;
+}
+
+.footer-links a i {
+  color: white;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 32px;
+  padding: 0px 6px;
 }
 .footer-links a:hover {
   opacity: 1;
 }
-
-$redlogo: #FF5A6D;
-$grey-background: #FBE1E4;
-$yellow: #EFB056;
-$orange: #D75944;
-$bleunight: #2D3C4B;
