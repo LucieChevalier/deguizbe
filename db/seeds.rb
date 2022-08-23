@@ -286,8 +286,8 @@ puts "Creating reservations..."
 reservation1 = Reservation.create!(
   comment: "J'ai besoin d'un costume ce weekend (abolument!!!!!!)",
   status: "Accepted",
-  # start_date:,
-  # end_date:,
+  start_date: "2022-08-19",
+  end_date: "2022-08-22",
   total_amount: 140,
   costume: superman,
   renter: user4
@@ -296,8 +296,8 @@ reservation1 = Reservation.create!(
 reservation2 = Reservation.create!(
   comment: "I'm english and came all the way to France for that Pikachu party, I must get it",
   status: "Pending",
-  # start_date:,
-  # end_date:,
+  start_date: "2022-08-26",
+  end_date: "2022-08-29",
   total_amount: 140,
   costume: pikachu,
   renter: user4
@@ -306,8 +306,8 @@ reservation2 = Reservation.create!(
 reservation3 = Reservation.create!(
   comment: "C'est l'anniversaire de ma femme ce weekend - et j'aime beaucoup la mere Noel",
   status: "Declined",
-  # start_date:,
-  # end_date:,
+  start_date: "2022-08-26",
+  end_date: "2022-08-29",
   total_amount: 140,
   costume: mere_noel,
   renter: user5
@@ -316,8 +316,8 @@ reservation3 = Reservation.create!(
 reservation4 = Reservation.create!(
   comment: "Ma fille a un anniversaire cette semaine et le theme c'est le jeu: Le Loup Garou",
   status: "Pending",
-  # start_date:,
-  # end_date:,
+  start_date: "2022-08-23",
+  end_date: "2022-08-26",
   total_amount: 140,
   costume: enfant_loup,
   renter: user5
