@@ -1,10 +1,13 @@
 .footer {
+  position:absolute;
+  left:0px;
+  bottom:0px;
+  height:70px;
+  width:100%;
   background: $bleunight;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
-  padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
 
