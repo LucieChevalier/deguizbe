@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  padding-right: 40px;
+  padding-left: 10px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +10,30 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 80px;
+}
+
+// .navbar-lewagon .nav-item {
+//   display: flex;
+//   align-items: center;
+// }
+.navbar-lewagon .nav-itemsignup {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-lewagon .nav-itemlogin {
+  background-color: $bleunight;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 16px;
+  text-decoration : none;
+}
+.navbar-lewagon .nav-itemlogin:hover {
+  background-color: $yellow;
+}
+
+.navbar-lewagon .nav-linklogin {
+  color: white;
+  text-decoration : none;
 }
