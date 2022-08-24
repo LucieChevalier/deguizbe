@@ -15,14 +15,20 @@ class ReservationsController < ApplicationController
     @reservation.total_amount = ((@reservation.end_date - @reservation.start_date + 1) * @costume.price_per_day).to_i
     @reservation.renter = current_user
     @reservation.status = "Pending"
+
+    # Redirection vers la page des réservations du renter
     if @reservation.save
-      redirect_to costume_reservations_path(@costume)
+      redirect_to costume_reservation_path(@costume, @reservation)
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
-    # Redirection vers la page des réservations du renter
-    #redirect_to costume_reservations_path(@costume)
+  def show
+    @costume = Costume.find(params[:costume_id])
+    @reservation = Reservation.find(params[:id])
+
+    
   end
 
   private

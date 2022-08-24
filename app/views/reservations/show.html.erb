@@ -1,0 +1,18 @@
+<h1>Confirmation de réservation</h1>
+<h2>Merci pour votre réservation, voici le détail de votre commande</h2>
+
+<ul>
+  <li>État de la commande : <%=@reservation.status%></li>
+  <li>Date de début : <%=@reservation.start_date%></li>
+  <li>Date de fin : <%=@reservation.end_date%></li>
+  <li>Prix par jour : <%=@costume.price_per_day%></li>
+  <li>Soit un total de : <%=@reservation.total_amount%></li>
+
+  <li>Déguisement choisi : <%=@costume.name%></li>
+  <li>Description : <%=@costume.description%></li>
+  <li>Catégorie : <%=@costume.category%></li>
+  <li>Vos commentaires : <%=@reservation.comment%></li>
+  <li>Adresse du déguisement : <%=@costume.address%></li>
+  <li>Adresse de livraison : <%=current_user.address%></li>
+  <li>Propriétaire : <%=User.find(@costume.owner_id).first_name%> <%=User.find(@costume.owner_id).last_name%></li>
+</ul>

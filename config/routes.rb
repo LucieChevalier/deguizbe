@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # 1/ Logique de renter (et visitor)
   resources :costumes, only: %i[index show] do # un visitor/renter peut voir les costumes (index) et leur fiche individuelle (show)
-    resources :reservations, only: %i[new create] # un renter peut créer une réservation (basée sur un costume)
+    resources :reservations, only: %i[new create show] # un renter peut créer une réservation (basée sur un costume)
   end
   resources :reservations, only: %i[index] # un renter peut voir ses réservations
 
