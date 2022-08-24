@@ -1,13 +1,33 @@
 <div class="container-form">
   <h1>Nouvelle réservation</h1>
-  <%= simple_form_for [@costume, @reservation] do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :??? %> # liste déroulante costume
-    <%= f.input :comment %>
-    <%= f.input :??? %> # afficher total price
+  <%= simple_form_for [@costume, @reservation], html: { novalidate: false } do |f| %>
+
+    <%= f.error_notification %>
+
+    <%#= f.label current_user.first_name %>
+    <%#= f.label current_user.last_name %>
+    <div class="m-4">
+      <div class="img-costume-card">
+       <%= cl_image_tag @costume.photo.key, height: 300, width: 400, crop: :fit %>
+      </div>
+      <br>
+      <%= f.label @costume.name %>
+      <br>
+      <%= f.label @costume.size %>
+    </div>
+
+    <div class="d-inline date-fields">
+      <div class="left">
+        <%= f.input :start_date, as: :date, html5: true, required: true %>
+      </div>
+      <div class="right">
+        <%= f.input :end_date, as: :date, html5: true, required: true  %>
+      </div>
+    </div>
+
+    <%= f.input :address, value: current_user.address, required: true %>
+
+    <%= f.input :comment, hint: "Préciser la taille" %>
 
     <%= f.submit "Réserver", class: "btn btn-primary" %>
   <% end %>
