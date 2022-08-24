@@ -1,8 +1,8 @@
 // Specific CSS for your home-page
-// body, html {
-//   height: 100%;
-//   width: 100%;
-// }
+body, html {
+  height: 100%;
+  width: 100%;
+}
 
 body {
   background: white;
@@ -27,4 +27,8 @@ body {
     font-size: 30px;
     padding-bottom: 15px;
   }
+}
+
+h1 {
+  font-family: Poppins;
 }

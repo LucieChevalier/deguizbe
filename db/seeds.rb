@@ -202,7 +202,8 @@ enfant_loup = Costume.create!(
   price_per_day: 14,
   description: 'Ce costume a pour accessoires **: une** grenouillère, des manchettes, un couvre-pieds et une cagoule. Matière : 100% Polyester',
   category: 'personnage',
-  size: 'Enfant”, address: “12 villa de la Renaissance, Paris 75019',
+  size: 'Enfant',
+  address: '12 villa de la Renaissance, Paris 75019',
   owner: user2
 )
 

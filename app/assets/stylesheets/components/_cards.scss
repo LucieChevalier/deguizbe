@@ -1,3 +1,6 @@
+
+// Cards for INDEX
+
 .container {
     display: flex;
     margin: auto;
@@ -31,8 +34,26 @@
 
   .right-card {
     padding: 20px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
+}
+.title-index {
+  padding: 30px;
+  margin-left: 50px;
+  color: black;
 }
 
 
+// Cards for SHOW
 
+.card-title {
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  padding: 56px;
+}
