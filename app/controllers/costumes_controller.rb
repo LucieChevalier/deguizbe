@@ -3,5 +3,9 @@ class CostumesController < ApplicationController
 
   def show
     @costume = Costume.find(params[:id])
+
+  def index
+    @costumes = Costume.all
+
   end
 end
