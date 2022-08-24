@@ -5,6 +5,7 @@ ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
+gem "rails-i18n"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -29,6 +30,8 @@ gem "jbuilder"
 
 # devise
 gem "devise"
+
+gem "devise-i18n"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -78,3 +81,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+  # Cloudinary
+  gem "cloudinary"

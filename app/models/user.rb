@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   has_many :costumes, foreign_key: :owner_id # owner
   has_many :owner_reservations, through: :costumes, source: :reservations # owner
+
+  has_one_attached :photo
 end
