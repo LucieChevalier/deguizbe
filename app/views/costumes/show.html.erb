@@ -7,9 +7,9 @@
             <h4 class="card-title"><%= @costume.name %></h4>
               <ul>
                 <li class="card-text">Description : <%= @costume.description %> </li>
-                <li class="card-text">Prix/jour : <%= @costume.prix %> </li>
-                <li class="card-text">Tailles disponibles : <%= @costume.taille %> </li>
-                <li class="card-text">Nom du loueur : <%= @costume.owner %></li>
+                <li class="card-text">Prix/jour : <%= @costume.price_per_day %> € </li>
+                <li class="card-text">Tailles disponibles : <%= @costume.size %> </li>
+                <li class="card-text">Nom du loueur : <%= @costume.owner.first_name %> <%= @costume.owner.last_name %></li>
                 <li class="card-text">Adresse du retrait : <%= @costume.address %></li>
               </ul>
             <a href="#" class="btn btn-primary">Réserver ce costume</a>
