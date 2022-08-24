@@ -1,0 +1,13 @@
+.btn-home {
+  display: inline-block;
+  background-color: $bleunight;
+  color: white;
+  padding: 15px 20px;
+  margin: 10px;
+  border-radius: 16px;
+  text-decoration : none;
+}
+.btn-home:hover {
+  background-color: $yellow;
+  color: $bleunight;
+}
