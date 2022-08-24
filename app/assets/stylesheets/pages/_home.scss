@@ -7,23 +7,24 @@
 body {
   background: white;
 
-.banner {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 250px 0;
-}
+  .banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 250px 0;
+  }
 
-.banner h1 {
-  color: white;
-  font-weight: 900;
-  font-size: 70px;
-  padding-bottom: 25px;
-}
+  .banner h1 {
+    color: white;
+    font-weight: 900;
+    font-size: 70px;
+    padding-bottom: 25px;
+  }
 
-.banner h3 {
-  color: white;
-  font-weight: 200;
-  font-size: 30px;
-  padding-bottom: 15px;
+  .banner h3 {
+    color: white;
+    font-weight: 200;
+    font-size: 30px;
+    padding-bottom: 15px;
+  }
 }
