@@ -30,6 +30,13 @@ class ReservationsController < ApplicationController
     @current_user = current_user
   end
 
+  def index
+    @reservations = Reservation.where(renter_id: current_user)
+    @reservations_pending = @reservations.where(status: "Pending")
+    @reservations_accepted = @reservations.where(status: "Accepted")
+    @reservations_declined = @reservations.where(status: "Declined")
+  end
+
   private
 
   def reservation_params
