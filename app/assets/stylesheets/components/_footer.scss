@@ -1,8 +1,10 @@
 .footer {
-  position:absolute;
-  left:0px;
-  bottom:0px;
+  // position: absolute;
+  // position: fixed;
+  // left:0px;
+  // bottom:0px;
   height:70px;
+  text-align: center;
   width:100%;
   background: $bleunight;
   display: flex;
@@ -37,4 +39,8 @@
 }
 .footer-links a:hover {
   opacity: 1;
+}
+
+.footer-copyright {
+  margin-left: 30px;
 }
