@@ -8,11 +8,11 @@
                       <%= cl_image_tag(@costume.photo.key, height: 450, width: 250, crop: :fill) %>
                     </div>
                     <div>
-                      <li class="card-right-show">Description : <%= @costume.description %> </li>
+                      <li class="card-right-show">Taille disponible : <%= @costume.size %> </li>
                       <li class="card-right-show">Prix/jour : <%= @costume.price_per_day %> € </li>
-                      <li class="card-right-show">Tailles disponibles : <%= @costume.size %> </li>
+                      <li class="card-right-show">Description : <%= @costume.description %> </li>
                       <li class="card-right-show">Nom du loueur : <%= @costume.owner.first_name %> <%= @costume.owner.last_name %></li>
-                      <li class="card-right-show">Adresse du retrait : <%= @costume.address %></li>
+                      <li class="card-right-show">Avatar du loueur : <%= @costume.address %></li>
                     </div>
                   </ul>
               <%= link_to "Faire une réservation", new_costume_reservation_path(@costume) %>
