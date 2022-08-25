@@ -4,7 +4,7 @@
 // Define fonts for body and headers
 // $body-font: "Work Sans", "Helvetica", "sans-serif";
 $body-font: "poppins", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$headers-font: "roboto", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -16,15 +16,20 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // }
 // $my-font: "Font Name";
 
-
 body {
   margin: 0;
   font-family: poppins, sans-serif;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6{
   font-family: roboto, sans-serif;
 }
+
+p {
+  font-family: roboto, sans-serif;
+  font-weight: 700;
+}
+
 a {
   text-decoration: none;
 }
