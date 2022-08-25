@@ -1,20 +1,19 @@
 
 <div class="container-cards">
   <% @costumes.each do |costume| %>
-    <div class="card">
-      <ul class="list-style">
-        <div class="face left-card">
-          <%# <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
-          <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
-        </div>
-        <div class="face right-card">
-            <li><p><strong><%= costume.name %></strong></p></li>
-          <div class="btn-home link-info">
-            <li><i class="fa-solid fa-circle-info"></i> <%= link_to "Plus d'information", costume_path(costume) %></li>
+    <%= link_to costume_path(costume) do %>
+      <div class="card">
+        <ul class="list-style">
+          <div class="face left-card">
+            <%# <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
+            <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
           </div>
-        </div>
-      </ul>
-    </div>
+          <div class="face right-card">
+              <li><p><strong><%= costume.name %></strong></p></li>
+          </div>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
   </div>
 </div>

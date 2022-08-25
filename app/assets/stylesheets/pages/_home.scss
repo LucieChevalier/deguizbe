@@ -5,6 +5,10 @@ body, html {
   background: #f1e2bd;
 }
 
+.section {
+  min-height: calc(100vh - 70px);
+}
+
 // banner
 
 .container-home{
