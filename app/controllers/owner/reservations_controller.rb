@@ -1,6 +1,5 @@
 module Owner
   class ReservationsController < ApplicationController
-
     def index
       @owner = current_user
       @owner_reservations = @owner.owner_reservations
