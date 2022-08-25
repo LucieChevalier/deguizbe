@@ -1,7 +1,7 @@
 <h1 class="p-4">Vos réservations</h1>
 
 
-<h2 class="p-4">En attente de confirmation du propriétaire</h2>
+<h2 class="p-4">Réservations en attente de confirmation</h2>
 
   <div class="reservation-cards">
     <%@reservations_pending.order("created_at desc").each do |reservation|%>
@@ -20,7 +20,7 @@
   </div>
 
 
-<h2 class="p-4">Passées</h2>
+<h2 class="p-4">Réservations acceptées</h2>
 
 <div class="reservation-cards">
   <%@reservations_accepted.order("created_at desc").each do |reservation|%>
@@ -38,7 +38,7 @@
   <%end%>
 </div>
 
-<h2 class="p-4">Refusées</h2>
+<h2 class="p-4">Réservations refusées</h2>
 
 <div class="reservation-cards">
   <%@reservations_declined.order("created_at desc").each do |reservation|%>
