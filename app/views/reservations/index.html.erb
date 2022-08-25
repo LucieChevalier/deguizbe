@@ -1,10 +1,31 @@
-<h1 class="p-4">Vos réservations</h1>
+<div class="container">
+<div class="container-reservation">
+  <h1 class="p-4">Vos réservations blablabla</h1>
 
 
-<h2 class="p-4">Réservations en attente de confirmation</h2>
+  <h2 class="p-4">Réservations en attente de confirmation</h2>
+
+    <div class="reservation-cards">
+      <%@reservations_pending.order("created_at desc").each do |reservation|%>
+        <div class="card-category">
+          <div class="card-product">
+          <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
+            <div class="card-product-infos d-flex flex-column">
+              <h2><%=reservation.costume.name%></h2>
+              <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+              <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+              <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+
+
+  <h2 class="p-4">Réservations acceptées</h2>
 
   <div class="reservation-cards">
-    <%@reservations_pending.order("created_at desc").each do |reservation|%>
+    <%@reservations_accepted.order("created_at desc").each do |reservation|%>
       <div class="card-category">
         <div class="card-product">
         <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
@@ -19,39 +40,22 @@
     <%end%>
   </div>
 
+  <h2 class="p-4">Réservations refusées</h2>
 
-<h2 class="p-4">Réservations acceptées</h2>
-
-<div class="reservation-cards">
-  <%@reservations_accepted.order("created_at desc").each do |reservation|%>
-    <div class="card-category">
-      <div class="card-product">
-      <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
-        <div class="card-product-infos d-flex flex-column">
-          <h2><%=reservation.costume.name%></h2>
-          <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
-          <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
-          <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+  <div class="reservation-cards">
+    <%@reservations_declined.order("created_at desc").each do |reservation|%>
+      <div class="card-category">
+        <div class="card-product">
+        <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
+          <div class="card-product-infos d-flex flex-column">
+            <h2><%=reservation.costume.name%></h2>
+            <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+            <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+            <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+          </div>
         </div>
       </div>
-    </div>
-  <%end%>
-</div>
-
-<h2 class="p-4">Réservations refusées</h2>
-
-<div class="reservation-cards">
-  <%@reservations_declined.order("created_at desc").each do |reservation|%>
-    <div class="card-category">
-      <div class="card-product">
-      <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
-        <div class="card-product-infos d-flex flex-column">
-          <h2><%=reservation.costume.name%></h2>
-          <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
-          <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
-          <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
-        </div>
-      </div>
-    </div>
-  <%end%>
+    <%end%>
+  </div>
+  </div>
 </div>

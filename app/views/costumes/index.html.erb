@@ -1,19 +1,55 @@
-
-<div class="container-cards">
-  <% @costumes.each do |costume| %>
-    <%= link_to costume_path(costume) do %>
-      <div class="card">
-        <ul class="list-style">
-          <div class="face left-card">
-            <%# <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
-            <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
-          </div>
-          <div class="face right-card">
-              <li><p><strong><%= costume.name %></strong></p></li>
-          </div>
-        </ul>
+<div class="container-cardsindex">
+ <% @costumes.each do |costume| %>
+  <%= link_to costume_path(costume) do %>
+<div class="wrapper">
+  <div class="container-cost">
+    <div class="top">
+      <div class="left-card-test">
+        <%= cl_image_tag(costume.photo.key, height: 350, width: 275, crop: :fill) %>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+    <div class="bottom">
+      <div class="left">
+        <div class="details">
+          <h5><strong><%= costume.name %></strong></h5>
+          <h6><strong><%= costume.price_per_day %>€</strong></h6>
+        </div>
+        <div class="buy"><i class="material-icons">add_shopping_cart</i></div>
+      </div>
+      <div class="right">
+        <div class="done"><i class="material-icons">done</i></div>
+        <div class="details">
+          <h1>Chair</h1>
+          <p>Added to your cart</p>
+        </div>
+        <div class="remove"><i class="material-icons">clear</i></div>
+      </div>
+    </div>
   </div>
+  <div class="inside">
+    <div class="icon"><i class="material-icons">info_outline</i></div>
+    <div class="contents">
+      <table>
+        <tr>
+          <th>Taille :</th>
+          <th><%= costume.size %></th>
+        </tr>
+        <tr>
+          <p>Description :</p>
+          <th><%= %></th>
+        </tr>
+        <tr>
+          <th></th>
+          <p><%= costume.description %></p>
+        </tr>
+        <tr>
+          <td>Nom du loueur</td>
+          <td><%= costume.owner.first_name %> <%= costume.owner.last_name %></td>
+        </tr>
+      </table>
+    </div>
+   </div>
+</div>
+  <% end %>
+<% end %>
 </div>
