@@ -12,14 +12,14 @@
   margin: 0 auto;
   margin-bottom: 50px;
   display: flex;
-  border: none !important;
-  width: 30%;
-  border-radius: 16px;
   background-color: white;
   justify-content: space-around;
   padding: 0px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   // position: relative;
+}
+
+.card-show {
+  border: solid 0.2px
 }
 
 .list-style {
@@ -55,5 +55,5 @@
   display: flex;
   flex-direction: row;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  padding: 56px;
+  padding: 66px;
 }
