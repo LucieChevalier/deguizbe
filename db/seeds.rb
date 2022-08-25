@@ -59,11 +59,11 @@ user5 = User.create!(
 puts "Creating costumes..."
 
 piratejack = Costume.create!(
-  name: 'Déguisement de Pirate',
+  name: 'Pirate',
   price_per_day: 3,
-  description: 'Accessoires inclus : Chemise Gilet Pantacourt Bandana Ceinture Sur-bottes. Matière : 100% Polyester. Entretien : Laver à la main.',
+  description: 'Accessoires inclus : Chemise Gilet Pantacourt Bandana Ceinture Sur-bottes',
   category: 'Pirate',
-  size: 'Enfant, adulte-S, adulte-M, adulte-L',
+  size: 'adulte-L',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -73,11 +73,11 @@ piratejack.photo.attach(io: file, filename: "costume-1.png", content_type: "imag
 piratejack.save
 
 mariobros = Costume.create!(
-  name: 'Déguisement de Mario',
+  name: 'Mario',
   price_per_day: 5,
-  description: 'Accessoires inclus : Combinaison Ventre en mousse Casquette Moustache 2 Gants. Matière : 100% PolyesterEntretien : Lavage à la main.',
+  description: 'Accessoires inclus : Combinaison Ventre en mousse Casquette Moustache 2 Gants',
   category: 'personnage',
-  size: 'Enfant, adulte-S, adulte-M, adulte-L',
+  size: 'adulte-M',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -87,25 +87,25 @@ mariobros.photo.attach(io: file, filename: "costume-1.png", content_type: "image
 mariobros.save
 
 linkzelda = Costume.create!(
-  name: 'Déguisement de Link',
+  name: 'Link',
   price_per_day: 5,
-  description: 'Accessoires inclus : Tunique Ceinture Bonnet. Entretien : Laver à la main',
+  description: 'Accessoires inclus : Tunique Ceinture Bonnet',
   category: 'personnage',
-  size: 'Enfant, adulte-S, adulte-M, adulte-L',
+  size: 'adulte-S',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
 
-file = URI.open("https://www.deguisetoi.fr/p-333277-deguisement-link-zelda-classique-adulte.html?type=product&_gl=1*6psmpj*_up*MQ..&gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITU3FmLMtp8snFISg-dM9tfuzb8RyYDlZYSt_d1SNoWsr1JcS4H5BiQaAno-EALw_wcB")
+file = URI.open("https://static1.funidelia.com/39084-f6_big2/deguisement-link-the-legend-of-zelda-deluxe-adulte.jpg")
 linkzelda.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
 linkzelda.save
 
 superman = Costume.create!(
-  name: 'Déguisement Superman',
+  name: 'Superman',
   price_per_day: 8,
-  description: 'Accessoires inclus : Combinaison rembourrée avec couvre-bottes Cape Ceinture. Matière : Polyester. Entretien : Laver à la main',
+  description: 'Accessoires inclus : Combinaison rembourrée avec couvre-bottes Cape Ceinture',
   category: 'personnage',
-  size: 'Enfant, adulte-S, adulte-M, adulte-L',
+  size: 'adulte-S',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -115,11 +115,11 @@ superman.photo.attach(io: file, filename: "costume-1.png", content_type: "image/
 superman.save
 
 piratemarron = Costume.create!(
-  name: 'Déguisement de pirate - marron',
+  name: 'Femme Pirate - marron',
   price_per_day: 8,
-  description: 'Accessoires inclus : Haut Pantalon Baudrier. Matière : 100% Polyester',
+  description: 'Accessoires inclus : Haut Pantalon Baudrier',
   category: 'pirate',
-  size: 'adulte-S, adulte-M, adulte-L',
+  size: 'adulte-S',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -129,11 +129,11 @@ piratemarron.photo.attach(io: file, filename: "costume-1.png", content_type: "im
 piratemarron.save
 
 piratenoir = Costume.create!(
-  name: 'Déguisement de pirate - noir',
+  name: 'Femme Pirate - noir',
   price_per_day: 8,
-  description: 'Accessoires inclus : robe corset bandana. Matière : 100% polyester. Entretien : Lavage à la main',
+  description: 'Ce déguisemnt comprend une robe-corset et un bandana.',
   category: 'pirate',
-  size: 'adulte-S',
+  size: 'adulte-L',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -143,11 +143,11 @@ piratenoir.photo.attach(io: file, filename: "costume-1.png", content_type: "imag
 piratenoir.save
 
 piraterayures = Costume.create!(
-  name: 'Déguisement Pirate à rayures',
+  name: 'Pirate à rayures',
   price_per_day: 5,
-  description: 'Accessoires inclus : Haut Pantacourt 2 manchettes Ceinture Bandeau 2 couvre-bottes. Matière : 100% Polyester. Entretien : A la main',
+  description: 'Retrouvez dans ce déguisement un Haut, un Pantacourt, un Bandeau, des manchettes et 2 couvre-bottes.',
   category: 'pirate',
-  size: 'adulte-M, adulte-L',
+  size: 'adulte-M',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -157,25 +157,25 @@ piraterayures.photo.attach(io: file, filename: "costume-1.png", content_type: "i
 piraterayures.save
 
 asterix = Costume.create!(
-  name: 'Déguisement d ‘Asterix',
+  name: 'Asterix',
   price_per_day: 16,
-  description: 'Ce costume a pour accessoires **: une tunique (haut et p**antalon), une ceinture gourde et un fourreau. Matière **:** 100% polyester.',
+  description: "Ce déguisement est composé d'une tunique et d'un pantalon avec une ceinture, une gourde et un fourreau.",
   category: 'personnage',
-  size: 'S',
+  size: 'adulte-S',
   address: '12 villa de la renaissance, Paris 75019',
   owner: user2
   )
 
-file = URI.open("https://www.deguisetoi.fr/p-316920-deguisement-asterix-trade-adulte.html?type=product")
+file = URI.open("https://www.ambiance-unic.fr/3069-tm_large_default/deguisement-asterix.jpg")
 asterix.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
 asterix.save
 
 cow_boy = Costume.create!(
-  name: 'Déguisement de cow-boy',
+  name: 'Cow-Boy',
   price_per_day: 10,
-  description: 'Ce costume a pour accessoires un gilet, un sur-pantalon, un bandana et un chapeau de cow-boy. Matière : 100% Polyester.',
+  description: 'Ce déguisement a pour accessoires un gilet, un sur-pantalon, un bandana et un chapeau de cow-boy.',
   category: 'western',
-  size: 'Enfant, adulte-S, adulte-M',
+  size: 'adulte-M',
   address: '12 villa de la renaissance, Paris 75019',
   owner: user2
 )
@@ -185,10 +185,11 @@ cow_boy.photo.attach(io: file, filename: "costume-1.png", content_type: "image/p
 cow_boy.save
 
 mere_noel = Costume.create!(
-  name: 'Déguisement de Mère-Noël',
+  name: 'Mère-Noël',
   price_per_day: 12,
-  description: 'Ce costume a pour accessoires : une robe corset et un bonnet de Mère-Noël. Matière : 100% Polyester.',
-  category: 'uniforme”, size: “adulte-S, adulte-M',
+  description: 'Ce déguisement comprend une robe-corset et un bonnet de Mère-Noël.',
+  category: 'uniforme',
+  size: 'adulte-S',
   address: '12 villa de la renaissance, Paris 75019',
   owner: user2
 )
@@ -198,11 +199,12 @@ mere_noel.photo.attach(io: file, filename: "costume-1.png", content_type: "image
 mere_noel.save
 
 enfant_loup = Costume.create!(
-  name: 'Déguisement d’enfant-loup',
+  name: 'Enfant-Loup',
   price_per_day: 14,
-  description: 'Ce costume a pour accessoires **: une** grenouillère, des manchettes, un couvre-pieds et une cagoule. Matière : 100% Polyester',
+  description: 'Ce déguisement comprend une grenouillère, des manchettes, un couvre-pieds et une cagoule',
   category: 'personnage',
-  size: 'Enfant”, address: “12 villa de la Renaissance, Paris 75019',
+  size: 'Enfant',
+  address: '12 villa de la Renaissance, Paris 75019',
   owner: user2
 )
 
@@ -211,9 +213,9 @@ enfant_loup.photo.attach(io: file, filename: "costume-1.png", content_type: "ima
 enfant_loup.save
 
 prisonnier = Costume.create!(
-  name: 'Déguisement prisonnier',
+  name: 'Prisonnière',
   price_per_day: 6,
-  description: 'Costume prisonnier comprenant la blouse, le pantalon et le badge',
+  description: 'Ce déguisemnt inclut la blouse, le pantalon et le badge',
   category: 'uniforme',
   size: 'adulte-S',
   address: '2 rue de la Marne, Nantes 44000',
@@ -226,25 +228,25 @@ prisonnier.save
 
 princessezelda = Costume.create!(
   # photo:')',
-  name: 'Déguisement de princesse Zelda',
+  name: 'Princesse Zelda',
   price_per_day: 7,
-  description: 'Accessoires inclus :Robe Épaulettes Tablier Tiare. Matière : 100 % polyesterEntretien : Laver à la main',
+  description: 'ce déguisement inclut une Robe à Épaulettes, un Tablier et une Tiare',
   category: 'Personnage',
-  size: 'adulte-S, adulte-M, adulte-L',
+  size: 'Enfant',
   address: '24 route des coteaux, Divatte sur Loire 44450',
   owner: user3
 )
 
-file = URI.open("https://www.deguisetoi.fr/p-333283-deguisement-princesse-zelda-deluxe-femme.html?type=product")
+file = URI.open("https://imaginaire.com/fr/images/THE-LEGEND-OF-ZELDA-COSTUME-DE-ZELDA-DELUXE-ADULTE__DI98796-Z.JPG")
 princessezelda.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
 princessezelda.save
 
 pilotedeligne = Costume.create!(
-  name: 'Déguisement de pilote de ligne Top Gun',
+  name: 'Pilote de chasse à la Top Gun',
   price_per_day: 9,
-  description: 'Accessoires inclus : Combinaison Lunettes Blasons. Matière : 100% Polyester. Entretien : A la main',
+  description: 'Accessoires inclus : Combinaison à blasons et des lunettes de soleil',
   category: 'uniforme',
-  size: 'adulte-S, adulte-M', address: '24 route des coteaux, Divatte sur Loire 44450',
+  size: 'adulte-M', address: '24 route des coteaux, Divatte sur Loire 44450',
   owner: user3
 )
 
@@ -253,31 +255,31 @@ pilotedeligne.photo.attach(io: file, filename: "costume-1.png", content_type: "i
 pilotedeligne.save
 
 amerindienne = Costume.create!(
-  name: 'costume d’amérindienne',
+  name: 'Amérindienne',
   price_per_day: 8,
-  description: 'Matière : 100% POLYESTER. Entretien : Lavable à la main',
+  description: 'ce costume est composéee de',
   category: 'western',
   size: 'adulte-M',
   address: '24 route des coteaux, Divatte sur Loire 44450',
   owner: user3
 )
 
-file = URI.open("https://www.deguisetoi.fr/p-233196-deguisement-indienne-femme.html?type=product")
+file = URI.open("https://www.coti-jouets.fr/12197-large_default/deguisement-indienne-fleur-des-prairies-taille-s.jpg")
 amerindienne.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
 amerindienne.save
 
 pikachu = Costume.create!(
   # photo: 'https://cdn.deguisetoi.fr/images/rep_art/moy_v5/32…isement-bonhomme-jaune-electrique-bebe_328015.jpg',
-  name: 'costume de pikachu',
+  name: 'Pikachu',
   price_per_day: 12,
-  description: 'Accessoires inclus : Combinaison Queue. Matière : 100% Polyester. Entretien : Laver à la main',
+  description: 'Accessoires inclus : Combinaison Queue.',
   category: 'personnage',
   size: 'Enfant',
   address: '24 route des coteaux, Divatte sur Loire 44450',
   owner: user3
 )
 
-file = URI.open("https://www.deguisetoi.fr/p-328015-deguisement-bonhomme-jaune-electrique-bebe.html?type=product")
+file = URI.open("https://www.feter-recevoir.com/upload/image/deguisement-pikachu-bebe-p-image-178360-grande.jpg")
 pikachu.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
 pikachu.save
 
