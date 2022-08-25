@@ -1,9 +1,9 @@
 .footer {
-  // position: absolute;
-  // position: fixed;
-  // left:0px;
-  // bottom:0px;
-  height:70px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3.5rem;            /* Footer height */
+  // height:70px;
   text-align: center;
   width:100%;
   background: $bleunight;
@@ -16,6 +16,9 @@
 .footer h2 {
   color: white;
   opacity: 0.5;
+  font-size: 18px;
+  align-items: center;
+  margin-top: 9px;
 }
 
 .footer-links {
@@ -27,7 +30,7 @@
   color: white;
   opacity: 0.5;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 12px;
   padding: 0px 10px;
 }
 
@@ -35,13 +38,29 @@
   color: white;
   opacity: 0.5;
   text-decoration: none;
-  font-size: 32px;
+  font-size: 12px;
   padding: 0px 6px;
 }
 .footer-links a:hover {
   opacity: 1;
 }
 
+.social a i {
+  color: white;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0px 6px;
+}
+
+.social a:hover {
+  opacity: 1;
+}
+
 .footer-copyright {
   margin-left: 30px;
+}
+
+.footer-brand {
+  margin-left: 18px;
 }

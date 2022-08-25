@@ -4,14 +4,17 @@
 <button>Voir les déguisement</button>
 
 <button>Louer mes déguisement</button> %>
-<body>
-  <!-- code a Hero / Banner section -->
-  <div class="banner" style="background-image: url(https://burst.shopifycdn.com/photos/cats-eye-and-costume.jpg?width=1850&format=pjpg&exif=1&iptc=1);">
-    <div class="container-home">
-      <h1>DeguizBe</h1>
-      <h3>Change de vie... change d’habits !</h3>
+
+
+
+<div class="banner" style="background-image: url(https://burst.shopifycdn.com/photos/cats-eye-and-costume.jpg?width=1850&format=pjpg&exif=1&iptc=1);">
+  <div class="container">
+    <h1 class="title-home">DeguizBe</h1>
+    <h3 class="slogan-home">Change de vie... change d’habits !</h3>
+
+    <div class="button-home">
       <%= link_to "Voir les déguisements", costumes_path, class: "btn-home"%>
       <%= link_to "Louer mes déguisements", owner_costumes_path, class: "btn-home" %>
     </div>
   </div>
-</body>
+</div>

@@ -4,8 +4,9 @@
   <%@owner_costumes.order("created_at desc").each do | costume |%>
     <div class="card-category">
       <div class="card-product">
-
-        <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
+        <div class="img-costume-card">
+          <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
+        </div>
         <div class="card-product-infos d-flex flex-column">
           <h2><%=costume.name%></h2>
           <p><%=costume.description%></p>

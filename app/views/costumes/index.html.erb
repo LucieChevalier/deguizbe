@@ -1,4 +1,3 @@
-
 <div class="container-cards">
   <% @costumes.each do |costume| %>
     <div class="card">
@@ -8,7 +7,18 @@
           <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
         </div>
         <div class="face right-card">
-            <li><p><strong><%= costume.name %></strong></p></li>
+            <li><p class="index-card-title"><strong><%= costume.name %></strong></p></li>
+          <div class="text-card">
+
+            <div class="description-index">
+              <li><p>Taille : <strong><%= costume.size %></strong></p></li>
+              <li><p>Categorie : <strong><%= costume.category %></strong></p></li>
+            </div>
+
+            <div class="price-index">
+              <li class="price-index"><strong><%= costume.price_per_day %></strong> € / jour</p></li>
+            </div>
+          </div>
           <div class="btn-home link-info">
             <li><i class="fa-solid fa-circle-info"></i> <%= link_to "Plus d'information", costume_path(costume) %></li>
           </div>

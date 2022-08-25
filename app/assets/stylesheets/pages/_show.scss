@@ -1,0 +1,52 @@
+.body-show {
+  // background-color: white;
+}
+
+.container-show {
+  background-color: white;
+  border-top: 2px solid;
+  border-color: $bleunight;
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.container-left {
+  // background-color: red;
+  display: flex;
+
+  img {
+    object-fit: contain;
+    height: 70vh;
+  }
+}
+
+.container-middle {
+  background-color: #f7f7f9;
+  border-radius: 16px;
+  padding: 24px;
+  width: 33%
+}
+
+.container-right {
+  .form-label {
+    font-size: 12px;
+  }
+
+  input {
+    font-size: 12px;
+  }
+}
+
+.btn-show {
+  display: inline-block;
+  background-color: $bleunight;
+  color: white;
+  padding: 15px 20px;
+  margin: 10px;
+  border-radius: 16px;
+  text-decoration : none;
+  width: 250px;
+  height: 55px;
+  text-align: center;
+}
