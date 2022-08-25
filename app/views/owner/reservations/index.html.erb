@@ -1,0 +1,17 @@
+<h1>Vos réservations</h1>
+
+<div class="reservation-cards">
+    <%@owner_reservations.order("created_at desc").each do |reservation|%>
+      <div class="card-category">
+        <div class="card-product">
+          <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 600, crop: :fit %>
+          <div class="card-product-infos d-flex flex-column">
+            <h2><%=reservation.costume.name%></h2>
+            <p>Demande de reservation dû <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+            <p>Commentaire laissé par <%=reservation.renter.first_name%> <%=reservation.renter.last_name%> : <%= reservation.comment %></p>
+            <p class = "align-self-end"><strong>Montant obtenu après acceptation de la demande de reservation : <%=reservation.total_amount%> €</strong></p>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
