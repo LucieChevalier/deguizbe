@@ -15,7 +15,19 @@ module Owner
 
     #   redirect_to owner_reservations_path
     # end
-    
+
+    def accept
+      reservation = Reservation.find(params[:id])
+      reservation.update(status: "Accepted")
+      redirect_to owner_reservations_path
+    end
+
+    def decline
+      reservation = Reservation.find(params[:id])
+      reservation.update(status: "Declined")
+      redirect_to owner_reservations_path
+    end
+
   private
 
     def reservation_params
