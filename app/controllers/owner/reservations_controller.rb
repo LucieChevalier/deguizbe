@@ -1,6 +1,5 @@
 module Owner
   class ReservationsController < ApplicationController
-
     def index
       @owner = current_user
       @owner_reservations = @owner.owner_reservations
@@ -16,8 +15,7 @@ module Owner
 
     #   redirect_to owner_reservations_path
     # end
-
-
+    
   private
 
     def reservation_params
