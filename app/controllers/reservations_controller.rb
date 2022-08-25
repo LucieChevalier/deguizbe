@@ -27,8 +27,7 @@ class ReservationsController < ApplicationController
   def show
     @costume = Costume.find(params[:costume_id])
     @reservation = Reservation.find(params[:id])
-
-    
+    @current_user = current_user
   end
 
   private
