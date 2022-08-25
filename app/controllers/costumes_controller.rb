@@ -1,5 +1,5 @@
 class CostumesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def show
     @costume = Costume.find(params[:id])

@@ -1,0 +1,21 @@
+<h1>Créer un costume</h1>
+
+<!-- app/views/restaurants/_form.html.erb -->
+<div class="form">
+  <div class="form-inputs">
+    <%= simple_form_for([:owner, @owner_costume]) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :category %>
+      <%= f.input :size %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :price_per_day %>
+      <%= f.input :photo, as: :file %>
+
+
+    <div class="form-actions">
+        <%= f.submit %>
+    </div>
+  </div>
+  <% end %>
+</div>
