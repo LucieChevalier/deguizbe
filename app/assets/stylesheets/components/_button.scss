@@ -43,6 +43,11 @@
 
     a {
       color: white;
+      text-decoration: none;
+    }
+
+    i {
+      text-decoration: none;
     }
 
     &:hover {
@@ -50,4 +55,8 @@
       background-color: $yellow;
       color: $bleunight;
     }
+}
+
+.index-cost {
+  margin-left: 200px;
 }

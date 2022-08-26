@@ -212,19 +212,7 @@ file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/217/4/217474/de
 piratemarron.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
 piratemarron.save
 
-piratenoir = Costume.create!(
-  name: 'Femme Pirate - noir',
-  price_per_day: 14,
-  description: 'Ce déguisemnt comprend une robe-corset et un bandana.',
-  category: 'Pirate',
-  size: 'Adulte-L',
-  address: '24 rue Jean Lurcat, Villejuif 94800',
-  owner: user1
-)
 
-file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/281/4/281426/sexy-piratess-ladies-costume-xxl-black-bordeaux_281426.jpg")
-piratenoir.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-piratenoir.save
 
 piraterayures = Costume.create!(
   name: 'Pirate',
