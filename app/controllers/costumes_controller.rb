@@ -7,6 +7,10 @@ class CostumesController < ApplicationController
   end
 
   def index
-    @costumes = Costume.all
+    if user_signed_in?
+      @costumes = Costume.all.select { |costume|  costume.owner_id != current_user.id  }
+    else
+      @costumes = Costume.all
+    end
   end
 end
