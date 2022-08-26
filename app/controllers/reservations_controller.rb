@@ -18,13 +18,25 @@ class ReservationsController < ApplicationController
     @reservation.status = "Pending"
 
     # Redirection vers la page des réservations du renter
-    if @reservation.save
-      # raise
-      redirect_to costume_reservation_path(@costume, @reservation)
-    else
-      # raise
-      render :new, status: :unprocessable_entity
+    # if @reservation.save
+    #   # raise
+    #   redirect_to costume_reservation_path(@costume, @reservation)
+    # else
+    #   # raise
+    #   render :new, status: :unprocessable_entity
+    # end
+
+    # AJAX
+    respond_to do |format|
+      if @reservation.save
+        format.html { redirect_to costume_path(@costume) }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.html { render "costumes/show", status: :unprocessable_entity }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
     end
+
   end
 
   def show
