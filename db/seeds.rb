@@ -60,8 +60,8 @@ puts "Creating costumes..."
 
 piratejack = Costume.create!(
   name: 'Pirate',
-  price_per_day: 3,
-  description: 'Accessoires inclus : Chemise Gilet Pantacourt Bandana Ceinture Sur-bottes',
+  price_per_day: 14,
+  description: "Ce déguisement est constitué d'une chemise, d'un gilet, d'un pantacourt, d'un bandana et de sur-bottes",
   category: 'Pirate',
   size: 'adulte-L',
   address: '24 rue Jean Lurcat, Villejuif 94800',
@@ -74,8 +74,8 @@ piratejack.save
 
 mariobros = Costume.create!(
   name: 'Mario',
-  price_per_day: 5,
-  description: 'Accessoires inclus : Combinaison Ventre en mousse Casquette Moustache 2 Gants',
+  price_per_day: 15,
+  description: "Ce déguisement se compose d'une combinaison en mousse, d'une casquette, d'une moustache et d'une paire de gants blancs",
   category: 'personnage',
   size: 'adulte-M',
   address: '24 rue Jean Lurcat, Villejuif 94800',
@@ -88,8 +88,8 @@ mariobros.save
 
 linkzelda = Costume.create!(
   name: 'Link',
-  price_per_day: 5,
-  description: 'Accessoires inclus : Tunique Ceinture Bonnet',
+  price_per_day: 14,
+  description: 'Ce déguisement comprend une tunique, une teinture et un bonnet',
   category: 'personnage',
   size: 'adulte-S',
   address: '24 rue Jean Lurcat, Villejuif 94800',
@@ -102,8 +102,8 @@ linkzelda.save
 
 superman = Costume.create!(
   name: 'Superman',
-  price_per_day: 8,
-  description: 'Accessoires inclus : Combinaison rembourrée avec couvre-bottes Cape Ceinture',
+  price_per_day: 15,
+  description: "Retrouvez dans ce déguisement une combinaison rembourrée avec ceinture et couvre-bottes, ainsi qu'une cape",
   category: 'personnage',
   size: 'adulte-S',
   address: '24 rue Jean Lurcat, Villejuif 94800',
@@ -116,8 +116,8 @@ superman.save
 
 piratemarron = Costume.create!(
   name: 'Femme Pirate - marron',
-  price_per_day: 8,
-  description: 'Accessoires inclus : Haut Pantalon Baudrier',
+  price_per_day: 14,
+  description: "Retrouvez dans ce déguisement un chapeau ainsi qu'un pantalon et un baudrier",
   category: 'pirate',
   size: 'adulte-S',
   address: '24 rue Jean Lurcat, Villejuif 94800',
@@ -130,7 +130,7 @@ piratemarron.save
 
 piratenoir = Costume.create!(
   name: 'Femme Pirate - noir',
-  price_per_day: 8,
+  price_per_day: 14,
   description: 'Ce déguisemnt comprend une robe-corset et un bandana.',
   category: 'pirate',
   size: 'adulte-L',
@@ -143,9 +143,9 @@ piratenoir.photo.attach(io: file, filename: "costume-1.png", content_type: "imag
 piratenoir.save
 
 piraterayures = Costume.create!(
-  name: 'Pirate à rayures',
-  price_per_day: 5,
-  description: 'Retrouvez dans ce déguisement un Haut, un Pantacourt, un Bandeau, des manchettes et 2 couvre-bottes.',
+  name: 'Pirate',
+  price_per_day: 15,
+  description: 'Retrouvez dans ce déguisement une chemise et un gilet, un pantacourt, un bandeau, des manchettes et 2 couvre-bottes.',
   category: 'pirate',
   size: 'adulte-M',
   address: '24 rue Jean Lurcat, Villejuif 94800',
@@ -159,7 +159,7 @@ piraterayures.save
 asterix = Costume.create!(
   name: 'Asterix',
   price_per_day: 16,
-  description: "Ce déguisement est composé d'une tunique et d'un pantalon avec une ceinture, une gourde et un fourreau.",
+  description: "Ce déguisement est composé d'une tunique et d'un pantalon avec une ceinture, ainsi qu'une gourde et un fourreau.",
   category: 'personnage',
   size: 'adulte-S',
   address: '12 villa de la renaissance, Paris 75019',
@@ -172,8 +172,8 @@ asterix.save
 
 cow_boy = Costume.create!(
   name: 'Cow-Boy',
-  price_per_day: 10,
-  description: 'Ce déguisement a pour accessoires un gilet, un sur-pantalon, un bandana et un chapeau de cow-boy.',
+  price_per_day: 15,
+  description: "Ce déguisement se compose d'un gilet, un sur-pantalon, un bandana et un chapeau de cow-boy.",
   category: 'western',
   size: 'adulte-M',
   address: '12 villa de la renaissance, Paris 75019',
@@ -200,7 +200,7 @@ mere_noel.save
 
 enfant_loup = Costume.create!(
   name: 'Enfant-Loup',
-  price_per_day: 14,
+  price_per_day: 9,
   description: 'Ce déguisement comprend une grenouillère, des manchettes, un couvre-pieds et une cagoule',
   category: 'personnage',
   size: 'Enfant',
@@ -214,8 +214,8 @@ enfant_loup.save
 
 prisonnier = Costume.create!(
   name: 'Prisonnière',
-  price_per_day: 6,
-  description: 'Ce déguisemnt inclut la blouse, le pantalon et le badge',
+  price_per_day: 13,
+  description: 'Ce déguisemnt inclut une blouse avec un badge et un pantalon assorti',
   category: 'uniforme',
   size: 'adulte-S',
   address: '2 rue de la Marne, Nantes 44000',
@@ -229,8 +229,8 @@ prisonnier.save
 princessezelda = Costume.create!(
   # photo:')',
   name: 'Princesse Zelda',
-  price_per_day: 7,
-  description: 'ce déguisement inclut une Robe à Épaulettes, un Tablier et une Tiare',
+  price_per_day: 9,
+  description: 'Ce déguisement inclut une robe à épaulettes, un tablier et une tiare',
   category: 'Personnage',
   size: 'Enfant',
   address: '24 route des coteaux, Divatte sur Loire 44450',
@@ -242,9 +242,9 @@ princessezelda.photo.attach(io: file, filename: "costume-1.png", content_type: "
 princessezelda.save
 
 pilotedeligne = Costume.create!(
-  name: 'Pilote Top Gun',
-  price_per_day: 9,
-  description: 'Accessoires inclus : Combinaison à blasons et des lunettes de soleil',
+  name: 'Pilote - Top Gun',
+  price_per_day: 14,
+  description: "Ce déguisement est composé d'une combinaison à blasons et d'une paire de lunettes de soleil",
   category: 'uniforme',
   size: 'adulte-M', address: '24 route des coteaux, Divatte sur Loire 44450',
   owner: user3
@@ -256,8 +256,8 @@ pilotedeligne.save
 
 amerindienne = Costume.create!(
   name: 'Amérindienne',
-  price_per_day: 8,
-  description: 'ce costume est composéee de',
+  price_per_day: 13,
+  description: "Ce déguisement se compose d'une jupe à franges, d'un collier et d'une perruque à tresses",
   category: 'western',
   size: 'adulte-M',
   address: '24 route des coteaux, Divatte sur Loire 44450',
@@ -271,8 +271,8 @@ amerindienne.save
 pikachu = Costume.create!(
   # photo: 'https://cdn.deguisetoi.fr/images/rep_art/moy_v5/32…isement-bonhomme-jaune-electrique-bebe_328015.jpg',
   name: 'Pikachu',
-  price_per_day: 12,
-  description: 'Accessoires inclus : Combinaison Queue.',
+  price_per_day: 9,
+  description: "Ce déguisement est composé d'une simple combinaison à queue",
   category: 'personnage',
   size: 'Enfant',
   address: '24 route des coteaux, Divatte sur Loire 44450',
