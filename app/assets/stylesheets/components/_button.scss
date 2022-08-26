@@ -1,5 +1,10 @@
-.btn-home {
+.button-home {
   display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-home {
   background-color: $bleunight;
   color: white;
   padding: 15px 20px;
@@ -8,10 +13,11 @@
   text-decoration : none;
   width: 250px;
   height: 55px;
-  text-align: center;
-}
-.btn-home:hover {
-  background-color: $yellow;
-  color: $bleunight;
-}
+  font-size: 12px;
 
+    &:hover {
+      transition: margin-right 2s ease-in-out;
+      background-color: $yellow;
+      color: $bleunight;
+    }
+}

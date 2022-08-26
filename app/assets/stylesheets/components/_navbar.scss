@@ -37,3 +37,23 @@
   color: white;
   text-decoration : none;
 }
+
+.font-nav {
+  ul li {
+    font-size: 12px;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  ul li:hover {
+    font-size: 15px;
+    font-weight: 700;
+    transition: margin-right 2s ease-in-out;
+  }
+}
+
+.nav-link {
+  img {
+    width: 60px
+  }
+}

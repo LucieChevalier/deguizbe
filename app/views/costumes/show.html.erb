@@ -1,59 +1,46 @@
-<body>
-  <section>
-    <div class="container-cards">
-        <div class="card">
-                <h4 class="card-title"><%= @costume.name %></h4>
-                  <ul>
-                    <div class="card-left-show">
-                      <%= cl_image_tag(@costume.photo.key, height: 450, width: 250, crop: :fill) %>
-                    </div>
-                    <div>
-                      <li class="card-right-show">Taille disponible : <%= @costume.size %> </li>
-                      <li class="card-right-show">Prix/jour : <%= @costume.price_per_day %> € </li>
-                      <li class="card-right-show">Description : <%= @costume.description %> </li>
-                      <li class="card-right-show">Nom du loueur : <%= @costume.owner.first_name %> <%= @costume.owner.last_name %></li>
-                      <li class="card-right-show">Avatar du loueur : <%= @costume.address %></li>
-                    </div>
-                  </ul>
-              <%= link_to "Faire une réservation", new_costume_reservation_path(@costume) %>
-      </div>
-    </div>
-  </section>
-
-  <div class="container-form mb-4">
-  <h1>Nouvelle réservation</h1>
-  <%= simple_form_for [@costume, @reservation], html: { novalidate: false } do |f| %>
-
-    <%= f.error_notification %>
-
-    <%#= f.label current_user.first_name %>
-    <%#= f.label current_user.last_name %>
-    <div class="m-4">
-      <div class="img-costume-card text-center">
-       <%= cl_image_tag @costume.photo.key, height: 300, width: 400, crop: :fit %>
-      </div>
-      <br>
-      <strong><%= f.label @costume.name %></strong>
-      <%= f.label @costume.size %>
-    </div>
-
-    <div class="d-inline date-fields">
-      <div class="left">
-        <%= f.input :start_date, as: :date, html5: true, required: true %>
-      </div>
-      <div class="right">
-        <%= f.input :end_date, as: :date, html5: true, required: true  %>
+<body class="body-show">
+  <h4 class="title-show"><%= @costume.name %></h4>
+  <div class="container-show">
+    <div class="container-left">
+      <div class="photo-show">
+        <%= cl_image_tag(@costume.photo.key) %>
       </div>
     </div>
 
-    <%= f.input :address, value: current_user.address, required: true %>
+      <div class="container-middle">
+        <div class="fiche-produit">
+          <p>Fiche produit:</p>
+        </div>
+        <div class="description-show">
+          <p>Description : <strong><%= @costume.description %></strong> </p>
+          <p>Prix/jour : <strong><%= @costume.price_per_day %> € </strong></p>
+          <p>Tailles disponibles : <strong><%= @costume.size %> </strong></p>
+          <p>Adresse du retrait : <strong><%= @costume.address %></strong></p>
+          <p>Nom du loueur : <strong><%= @costume.owner.first_name %> <%= @costume.owner.last_name %></strong></p>
+        </div>
+      </div>
 
-    <%= f.input :comment, hint: "Préciser la taille" %>
+    <div class="container-form mb-4 container-right">
+      <h1>Réservé ce costume dès maintenant</h1>
+      <%= simple_form_for [@costume, @reservation], html: { novalidate: false } do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-actions text-center">
-      <%= f.submit "Réserver", class: "btn btn-primary " %>
+        <div class="d-inline date-fields container-right">
+          <div class="left">
+            <%= f.input :start_date, as: :date, html5: true, required: true %>
+          </div>
+          <div class="right container-right">
+            <%= f.input :end_date, as: :date, html5: true, required: true  %>
+          </div>
+        </div>
+
+        <%= f.input :address, value: current_user.address, required: true %>
+        <%= f.input :comment, hint: "Préciser la taille" %>
+
+        <div class="form-actions text-center container-right">
+          <%= f.submit "Réserver", class: "btn btn-primary btn-show" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
-
+  </div>
 </body>

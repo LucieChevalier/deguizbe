@@ -1,25 +1,25 @@
-<div class="container">
-  <h1>Vos costumes</h1>
-  <div class="reservation-cards">
-    <%@owner_costumes.order("created_at desc").each do | costume |%>
-      <div class="card-category">
-        <div class="card-product">
+<h1>Vos costumes</h1>
 
+<div class="reservation-cards">
+  <%@owner_costumes.order("created_at desc").each do | costume |%>
+    <div class="card-category">
+      <div class="card-product">
+        <div class="img-costume-card">
           <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
-          <div class="card-product-infos d-flex flex-column">
-            <h2><%=costume.name%></h2>
-            <p><%=costume.description%></p>
-            <p><%=costume.category%></p>
-            <p><%=costume.size%></p>
-            <p><%=costume.address%></p>
-            <p>Prix : <strong><%=costume.address%> € </strong></p>
-          </div>
+        </div>
+        <div class="card-product-infos d-flex flex-column">
+          <h2><%=costume.name%></h2>
+          <p><%=costume.description%></p>
+          <p><%=costume.category%></p>
+          <p><%=costume.size%></p>
+          <p><%=costume.address%></p>
+          <p>Prix : <strong><%=costume.address%> € </strong></p>
         </div>
       </div>
+    </div>
     <%end%>
   </div>
 
-  <div class="btn-home link-info">
-    <i class="fa-solid fa-circle-info"></i> <%= link_to "Creer un costume", new_owner_costume_path %>
-  </div>
+<div class="btn-home link-info">
+  <i class="fa-solid fa-circle-info"></i> <%= link_to "Creer un costume", new_owner_costume_path %>
 </div>
