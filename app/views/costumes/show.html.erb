@@ -1,6 +1,6 @@
 <body class="body-show">
+  <h4 class="title-show"><%= @costume.name %></h4>
   <div class="container-show">
-  <h4><%= @costume.name %></h4>
     <div class="container-left">
       <div class="photo-show">
         <%= cl_image_tag(@costume.photo.key) %>
@@ -8,6 +8,9 @@
     </div>
 
     <div class="container-middle">
+      <div class="fiche-produit">
+        <p>Fiche produit:</p>
+      </div>
       <div class="description-show">
         <p>Description : <%= @costume.description %> </p>
         <p>Prix/jour : <%= @costume.price_per_day %> € </p>

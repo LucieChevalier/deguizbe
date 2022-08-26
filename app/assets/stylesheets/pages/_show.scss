@@ -4,11 +4,21 @@
 
 .container-show {
   background-color: white;
-  border-top: 2px solid;
   border-color: $bleunight;
   display: flex;
   justify-content: space-evenly;
-  flex: 1;
+}
+
+.title-show {
+  padding: 42px;
+  margin-left: 64px;
+  font-family: roboto, sans-serif;
+  font-weight: 700;
+  color: #2D3C4B;
+  font-size: 52px;
+  letter-spacing: -4px;
+  margin-bottom: 39px;
+
 }
 
 .container-left {
@@ -17,7 +27,7 @@
 
   img {
     object-fit: contain;
-    height: 70vh;
+    height: 50vh;
   }
 }
 
@@ -25,16 +35,36 @@
   background-color: #f7f7f9;
   border-radius: 16px;
   padding: 24px;
-  width: 33%
+  width: 25%;
+  margin-left: 50px;
+  height: 50vh;
+
+  .fiche-produit p {
+    font-family: poppins, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -1px;
+    color: $bleunight;
+  }
 }
 
 .container-right {
+
   .form-label {
     font-size: 12px;
   }
 
   input {
     font-size: 12px;
+  }
+
+  h1 {
+    font-family: poppins, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -1px;
+    color: $bleunight;
+    margin-bottom: 32px;
   }
 }
 
@@ -49,4 +79,11 @@
   width: 250px;
   height: 55px;
   text-align: center;
+  border: none;
+
+  &:hover {
+    transition: margin-right 2s ease-in-out;
+    background-color: $yellow;
+    color: $bleunight;
+  }
 }
