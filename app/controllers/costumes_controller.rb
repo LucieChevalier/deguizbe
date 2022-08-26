@@ -3,6 +3,7 @@ class CostumesController < ApplicationController
 
   def show
     @costume = Costume.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def index
