@@ -11,9 +11,9 @@
         <div class="fiche-produit">
           <p>Fiche produit:</p>
         </div>
-        <div class="description-show">
+        <div class="description-show" data-controller="insert-in-list">
           <p>Description : <strong><%= @costume.description %></strong> </p>
-          <p>Prix/jour : <strong><%= @costume.price_per_day %> € </strong></p>
+          <div data-insert-in-list-target="items"><p>Prix/jour : <strong><%= @costume.price_per_day %> € </strong></p></div>
           <p>Tailles disponibles : <strong><%= @costume.size %> </strong></p>
           <p>Adresse du retrait : <strong><%= @costume.address %></strong></p>
           <p>Nom du loueur : <strong><%= @costume.owner.first_name %> <%= @costume.owner.last_name %></strong></p>
@@ -22,7 +22,7 @@
 
     <div class="container-form mb-4 container-right">
       <h1>Réserver ce costume dès maintenant</h1>
-      <%= simple_form_for [@costume, @reservation], html: { novalidate: false } do |f| %>
+      <%= simple_form_for [@costume, @reservation], data: {insert_in_list_target: "form"}, html: { novalidate: false } do |f| %>
       <%= f.error_notification %>
 
         <div class="d-inline date-fields container-right">
