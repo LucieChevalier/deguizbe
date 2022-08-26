@@ -1,10 +1,109 @@
-<h1 class="p-4">Vos réservations</h1>
+<div class="container">
+
+<div class="card-category-resa" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533261345681-5e63db84cbd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80)">
+            <h2 class="p-4">Réservations en attente de confirmation</h2>
+        </div>
+
+        <br>
+    <div class="reservation-cards">
+          <%@reservations_pending.order("created_at desc").each do |reservation|%>
+        <div class="card-product-resa">
+          <%= cl_image_tag reservation.costume.photo.key, height: 250, width: 150, crop: :fit %>
+          <div class="card-product-infos-resa">
+            <h2><%=reservation.costume.name%></h2>
+            <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+            <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+            <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+          </div>
+        </div>
+      <%end%>
+    </div>
+
+<br>
+<div class="card-category-resa" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533261345681-5e63db84cbd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80)">
+            <h2 class="p-4">Réservations acceptées</h2>
+        </div>
+
+        <br>
+
+            <div class="reservation-cards">
+    <%@reservations_accepted.order("created_at desc").each do |reservation|%>
+       <div class="card-product-resa">
+        <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
+          <div class="card-product-infos-resa">
+            <h2><%=reservation.costume.name%></h2>
+            <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+            <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+            <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+          </div>
+        </div>
+      <%end%>
+    </div>
 
 
-<h2 class="p-4">Réservations en attente de confirmation</h2>
+<br>
+<div class="card-category-resa" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533261345681-5e63db84cbd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80)">
+            <h2 class="p-4">Réservations refusées</h2>
+        </div>
+
+        <br>
+
+        <div class="reservation-cards">
+    <%@reservations_declined.order("created_at desc").each do |reservation|%>
+       <div class="card-product-resa">
+        <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
+          <div class="card-product-infos-resa">
+            <h2><%=reservation.costume.name%></h2>
+            <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+            <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+            <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+          </div>
+          </div>
+      <%end%>
+    </div>
+
+       
+
+
+
+----------------
+
+
+<div class="container">
+<div class="container-reservation">
+  <h1 class="p-4">Vos réservations blablabla</h1>
+
+
+  <h2 class="p-4">Réservations en attente de confirmation</h2>
+ <div class="container-resa">
+      <!-- Code your tabs here -->
+      <div class="tabs">
+        <a href="" class="tab active">Réservations en attente</a>
+        <a href="" class="tab">Réservations acceptées</a>
+        <a href="" class="tab">Réservation refusées</a>
+      </div>
+
+    <div class="reservation-cards">
+      <%@reservations_pending.order("created_at desc").each do |reservation|%>
+        <div class="card-category">
+          <div class="card-product">
+          <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
+            <div class="card-product-infos d-flex flex-column">
+              <h2><%=reservation.costume.name%></h2>
+              <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+              <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+              <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+
+
+  <h2 class="p-4">Réservations acceptées</h2>
 
   <div class="reservation-cards">
-    <%@reservations_pending.order("created_at desc").each do |reservation|%>
+    <%@reservations_accepted.order("created_at desc").each do |reservation|%>
       <div class="card-category">
         <div class="card-product">
         <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
@@ -19,39 +118,93 @@
     <%end%>
   </div>
 
+  <h2 class="p-4">Réservations refusées</h2>
 
-<h2 class="p-4">Réservations acceptées</h2>
-
-<div class="reservation-cards">
-  <%@reservations_accepted.order("created_at desc").each do |reservation|%>
-    <div class="card-category">
-      <div class="card-product">
-      <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
-        <div class="card-product-infos d-flex flex-column">
-          <h2><%=reservation.costume.name%></h2>
-          <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
-          <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
-          <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+  <div class="reservation-cards">
+    <%@reservations_declined.order("created_at desc").each do |reservation|%>
+      <div class="card-category">
+        <div class="card-product">
+        <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
+          <div class="card-product-infos d-flex flex-column">
+            <h2><%=reservation.costume.name%></h2>
+            <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+            <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+            <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+          </div>
         </div>
       </div>
-    </div>
-  <%end%>
+    <%end%>
+  </div>
+  </div>
+</div>
 </div>
 
-<h2 class="p-4">Réservations refusées</h2>
 
-<div class="reservation-cards">
-  <%@reservations_declined.order("created_at desc").each do |reservation|%>
-    <div class="card-category">
-      <div class="card-product">
-      <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
-        <div class="card-product-infos d-flex flex-column">
-          <h2><%=reservation.costume.name%></h2>
-          <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
-          <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
-          <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
-        </div>
+----------------------
+<%# test %>
+
+<div class="container">
+
+    <div class="container-resa">
+      <!-- Code your tabs here -->
+      <div class="tabs">
+        <a href="" class="tab active">Réservations en attente</a>
+        <a href="" class="tab">Réservations acceptées</a>
+        <a href="" class="tab">Réservation refusées</a>
       </div>
+
+      <div class="notifications">
+
+        <div class="notification">
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+          <div class="notification-content">
+            <p><small>14th January</small></p>
+            <p>Arthur liked <a href="#">landing page concept</a>.</p>
+          </div>
+
+          <div class="notification-actions">
+            <a href="#">Mark as seen <i class="fas fa-check"></i></a>
+          </div>
+        </div>
+
+        <div class="notification">
+          <img src='https://kitt.lewagon.com/placeholder/users/sarahlafer' class="avatar-large"/>
+          <div class="notification-content">
+            <p><small>14th January</small></p>
+            <p>Sarah started to follow you.</p>
+          </div>
+
+          <div class="notification-actions">
+            <a href="#">Follow back <i class="fas fa-user-plus"></i></a>
+          </div>
+        </div>
+
+        <div class="notification">
+          <img src='https://kitt.lewagon.com/placeholder/users/pdunleav' class="avatar-large"/>
+          <div class="notification-content">
+            <p><small>13th January</small></p>
+            <p>Phelim started to follow you.</p>
+          </div>
+
+          <div class="notification-actions">
+            <a href="#">Follow back <i class="fas fa-user-plus"></i></a>
+          </div>
+        </div>
+
+        <div class="notification">
+          <img src='https://kitt.lewagon.com/placeholder/users/papillard' class="avatar-large"/>
+          <div class="notification-content">
+            <p><small>10th January</small></p>
+            <p>Boris liked <a href="#">box shadow designs</a>.</p>
+          </div>
+
+
+        </div>
+
+
+        </div>
+
+      </div>
+
     </div>
-  <%end%>
 </div>

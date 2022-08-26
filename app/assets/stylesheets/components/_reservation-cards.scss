@@ -1,3 +1,69 @@
+
+// CSS card reservation
+
+.container-reservation {
+  background: #e9e7e7;
+  border-radius: 16px;
+
+}
+
+/*card-category-resa*/
+.card-category-resa {
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/*card-product-resa*/
+.card-product-resa {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+
+}
+
+.card-product-resa img {
+  // height: 150%;
+  // width: 350px;
+  object-fit: cover;
+  margin-right: 50px;
+}
+
+.card-product-resa h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product-resa p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-resa .card-product-infos {
+  padding: 16px;
+
+}
+
+// fin CSS card reservation
+
+// dashboard
 .card-product {
   overflow: hidden;
   width: 500px;
@@ -6,6 +72,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 16px;
 }
 
 .card-product img {
@@ -85,4 +152,66 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+
+
+
+// CSS jordan test 1 => mettre à la poubelle
+
+// body {
+//   margin: 0;
+//   margin-bottom: 100px;
+//   font-family: "Open Sans", "Helvetica", "sans-serif";
+//   background-color: #f7f7f7;
+// }
+.text-center-resa {
+  text-align: center;
+}
+.container-resa {
+  max-width: 900px;
+  margin: 24px auto;
+}
+a {
+  text-decoration: none;
+  color: #268BD2;
+}
+
+a:hover {
+  color: #227FC2;
+}
+
+.navbar-resa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  box-shadow: 5px 0 10px rgba(0,0,0,0.15);
+}
+.navbar-resa img {
+  width: 50px;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+}
+.tab {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  opacity: 0.3;
+  border-bottom: 5px solid transparent;
+  text-decoration: none;
+  color: black;
+}
+.tab:hover {
+  opacity: 1;
+}
+.tab.active {
+  opacity: 1;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 5px solid #00A699;
 }
