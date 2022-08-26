@@ -1,25 +1,36 @@
-<h1>Vos costumes</h1>
 
-<div class="reservation-cards">
+<h4 class="title-index">Vos déguisements</h4>
+
+<div class="btn-home-costume link-info">
+  <i class="fa-solid fa-circle-info"></i> <%= link_to "Créer un costume", new_owner_costume_path %>
+</div>
+
+<div class="container-cards">
   <%@owner_costumes.order("created_at desc").each do | costume |%>
-    <div class="card-category">
-      <div class="card-product">
-        <div class="img-costume-card">
+    <div class="card">
+      <ul class="list-style">
+        <div class="face left-card">
+          <%# <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
           <%= cl_image_tag(costume.photo.key, height: 350, width: 175, crop: :fill) %>
         </div>
-        <div class="card-product-infos d-flex flex-column">
-          <h2><%=costume.name%></h2>
-          <p><%=costume.description%></p>
-          <p><%=costume.category%></p>
-          <p><%=costume.size%></p>
-          <p><%=costume.address%></p>
-          <p>Prix : <strong><%=costume.address%> € </strong></p>
-        </div>
-      </div>
-    </div>
-    <%end%>
-  </div>
+        <div class="face right-card">
+            <li><p class="index-card-title"><strong><%= costume.name %></strong></p></li>
+          <div class="text-card">
 
-<div class="btn-home link-info">
-  <i class="fa-solid fa-circle-info"></i> <%= link_to "Creer un costume", new_owner_costume_path %>
+            <div class="description-index">
+              <li><p>Taille : <strong><%= costume.size %></strong></p></li>
+              <li><p>Description : <strong><%=costume.description%></strong></p></li>
+              <li><p>Categorie : <strong><%= costume.category %></strong></p></li>
+              <li><p>Address : <strong><%=costume.address%></strong></p></li>
+            </div>
+
+            <div class="price-index">
+              <li class="price-index"><strong><%= costume.price_per_day %></strong> € / jour</li>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  <% end %>
+  </div>
 </div>
