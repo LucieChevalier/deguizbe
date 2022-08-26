@@ -1,21 +1,29 @@
-<h1>Créer un costume</h1>
+<div class="container m-4">
+  <div class="container-form mb-4">
+    <h1>Créer un déguisement</h1>
+    <%= simple_form_for([:owner, @owner_costume], html: { novalidate: false }) do |f| %>
 
-<!-- app/views/restaurants/_form.html.erb -->
-<div class="form">
-  <div class="form-inputs">
-    <%= simple_form_for([:owner, @owner_costume]) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :category %>
-      <%= f.input :size %>
+      <%= f.error_notification %>
+
+     <div class="d-inline date-fields">
+      <div class="left">
+        <%= f.input :name %>
+      </div>
+      <div class="right">
+        <%= f.input :category %>
+      </div>
+      <div>
+        <%= f.input :size %>
+      </div>
+    </div>
       <%= f.input :description %>
       <%= f.input :address %>
       <%= f.input :price_per_day %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, as: :file, label: "Ajouter une photo", class: "test" %>
 
-
-    <div class="form-actions">
-        <%= f.submit %>
-    </div>
+      <div class="form-actions text-center">
+        <%= f.submit "Ajouter le déguisement", class: "btn-home" %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
