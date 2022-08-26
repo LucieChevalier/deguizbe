@@ -1,17 +1,135 @@
-<h1>Vos réservations</h1>
+<ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="owner" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Espace propriétaire</button>
+  </li>
 
-<div class="reservation-cards">
-    <%@owner_reservations.order("created_at desc").each do |reservation|%>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="renter" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Espace locataire</button>
+  </li>
+</ul>
+
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="owner">
+
+  <h3 class="p-4">Réservations à confirmer</h3>
+
+  <div class="reservation-cards">
+      <%@owner_reservations.where(status: "Pending").order("created_at desc").each do |reservation|%>
+        <div class="d-flex flex-column align-items-center">
+
+          <div class="card-product">
+            <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 600, crop: :fit %>
+            <div class="card-product-infos d-flex flex-column">
+              <h3><%=reservation.costume.name%></h3>
+              <p>Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+              <p><%=reservation.renter.first_name%> <%=reservation.renter.last_name%> : <%= reservation.comment %></p>
+              <p class = "align-self-end"><strong>Total : <%=reservation.total_amount%> €</strong></p>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between m-2">
+              <%= link_to "Accepter", accept_owner_reservation_path(reservation), data: {turbo_method: :patch}, class: "btn-home" %>
+              <%= link_to "Refuser", decline_owner_reservation_path(reservation), data: {turbo_method: :patch}, class: "btn-home" %>
+          </div>
+
+        </div>
+      <%end%>
+  </div>
+
+  <h3 class="p-4">Réservations acceptées</h3>
+
+  <div class="reservation-cards">
+      <%@owner_reservations.where(status: "Accepted").order("created_at desc").each do |reservation|%>
+
+        <div class="card-category">
+          <div class="card-product">
+            <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 600, crop: :fit %>
+            <div class="card-product-infos d-flex flex-column">
+              <h3><%=reservation.costume.name%></h3>
+              <p>Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+              <p><%=reservation.renter.first_name%> <%=reservation.renter.last_name%> : <%= reservation.comment %></p>
+              <p class = "align-self-end"><strong>Total : <%=reservation.total_amount%> €</strong></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+
+  <h3 class="p-4">Réservations refusées</h3>
+
+  <div class="reservation-cards">
+      <%@owner_reservations.where(status: "Declined").order("created_at desc").each do |reservation|%>
+        <div class="card-category">
+          <div class="card-product">
+            <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 600, crop: :fit %>
+            <div class="card-product-infos d-flex flex-column">
+              <h3><%=reservation.costume.name%></h3>
+              <p>Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+              <p><%=reservation.renter.first_name%> <%=reservation.renter.last_name%> : <%= reservation.comment %></p>
+              <p class = "align-self-end"><strong>Total : <%=reservation.total_amount%> €</strong></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="renter">
+
+<h3 class="p-4">Réservations en attente de confirmation</h3>
+
+  <div class="reservation-cards">
+    <%@reservations_pending.order("created_at desc").each do |reservation|%>
       <div class="card-category">
         <div class="card-product">
-          <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 600, crop: :fit %>
+        <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
           <div class="card-product-infos d-flex flex-column">
-            <h2><%=reservation.costume.name%></h2>
-            <p>Demande de reservation dû <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
-            <p>Commentaire laissé par <%=reservation.renter.first_name%> <%=reservation.renter.last_name%> : <%= reservation.comment %></p>
-            <p class = "align-self-end"><strong>Montant obtenu après acceptation de la demande de reservation : <%=reservation.total_amount%> €</strong></p>
+            <h3><%=reservation.costume.name%></h3>
+            <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+            <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+            <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
           </div>
         </div>
       </div>
     <%end%>
   </div>
+
+
+<h3 class="p-4">Réservations acceptées</h3>
+
+<div class="reservation-cards">
+  <%@reservations_accepted.order("created_at desc").each do |reservation|%>
+    <div class="card-category">
+      <div class="card-product">
+      <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
+        <div class="card-product-infos d-flex flex-column">
+          <h3><%=reservation.costume.name%></h3>
+          <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+          <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+          <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
+
+<h3 class="p-4">Réservations refusées</h3>
+
+<div class="reservation-cards">
+  <%@reservations_declined.order("created_at desc").each do |reservation|%>
+    <div class="card-category">
+      <div class="card-product">
+      <%= cl_image_tag reservation.costume.photo.key, height: 800, width: 500, crop: :fit %>
+        <div class="card-product-infos d-flex flex-column">
+          <h3><%=reservation.costume.name%></h3>
+          <p> Du <%=l(reservation.start_date, format: "%A %-d %b")%> au <%=l(reservation.end_date, format: "%A %-d %b")%></p>
+          <p>Propriétaire : <%=reservation.costume.owner.first_name%> <%=reservation.costume.owner.last_name%></p>
+          <p class = "align-self-end"><strong>Total <%=reservation.total_amount%> €</strong></p>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
+
+  </div>
+</div>

@@ -242,7 +242,7 @@ princessezelda.photo.attach(io: file, filename: "costume-1.png", content_type: "
 princessezelda.save
 
 pilotedeligne = Costume.create!(
-  name: 'Pilote de chasse à la Top Gun',
+  name: 'Pilote Top Gun',
   price_per_day: 9,
   description: 'Accessoires inclus : Combinaison à blasons et des lunettes de soleil',
   category: 'uniforme',
