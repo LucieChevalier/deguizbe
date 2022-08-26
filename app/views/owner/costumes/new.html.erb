@@ -3,18 +3,21 @@
 <!-- app/views/restaurants/_form.html.erb -->
 <div class="form">
   <div class="form-inputs">
-    <%= simple_form_for([:owner, @owner_costume]) do |f| %>
+    <%= simple_form_for([:owner, @owner_costume], html: { novalidate: false }) do |f| %>
       <%= f.input :name %>
       <%= f.input :category %>
       <%= f.input :size %>
       <%= f.input :description %>
       <%= f.input :address %>
       <%= f.input :price_per_day %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, as: :file, label: "Ajouter une photo", class: "test" %>
+
+ <%#= f.label :photo, "Ajouter une photo", class: "btn btn-default" %>
+  <%#= f.input :photo, as: :file, label: false, input_html: { style: "display: none" }%>
 
 
     <div class="form-actions">
-        <%= f.submit %>
+        <%= f.submit "Ajouter le déguisement", class: "btn-home" %>
     </div>
   </div>
   <% end %>

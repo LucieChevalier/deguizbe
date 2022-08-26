@@ -38,3 +38,13 @@ fr:
         email: "Adresse e-mail"
         password: "Mot de passe"
         password_confirmation: "Saisir à nouveau le mot de passe"
+      reservation:
+        start_date: 'Date de début'
+        end_date: 'Date de fin'
+        comment: "Commentaires"
+      costume:
+        name: "Nom"
+        category: "Catégorie"
+        size: "Taille"
+        address: "Adresse"
+        price_per_day: "Prix/jour"
