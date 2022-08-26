@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+
   def new
     @costume = Costume.find(params[:costume_id])
     @reservation = Reservation.new
@@ -18,8 +19,10 @@ class ReservationsController < ApplicationController
 
     # Redirection vers la page des réservations du renter
     if @reservation.save
+      # raise
       redirect_to costume_reservation_path(@costume, @reservation)
     else
+      # raise
       render :new, status: :unprocessable_entity
     end
   end
