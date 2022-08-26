@@ -24,6 +24,7 @@
 .container-left {
   // background-color: red;
   display: flex;
+  margin-left: 40px;
 
   img {
     object-fit: contain;
@@ -32,12 +33,13 @@
 }
 
 .container-middle {
-  background-color: #f7f7f9;
-  border-radius: 16px;
-  padding: 24px;
-  width: 25%;
-  margin-left: 50px;
-  height: 50vh;
+
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: space-around;
+  width: 500px;
 
   .fiche-produit p {
     font-family: poppins, sans-serif;
@@ -45,6 +47,8 @@
     font-size: 18px;
     letter-spacing: -1px;
     color: $bleunight;
+    margin-top: -16px;
+    margin-left: 60px;
   }
 }
 
@@ -86,4 +90,16 @@
     background-color: $yellow;
     color: $bleunight;
   }
+}
+
+.description-show {
+  color: #2D3C4B;
+  font-size: 14px !important;
+  line-height: 20px;
+  text-align: left;
+  background-color: #f7f7f9;
+  border-radius: 16px;
+  padding: 24px;
+  // width: 25%;
+  margin-left: 60px;
 }

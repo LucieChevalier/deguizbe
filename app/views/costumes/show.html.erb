@@ -7,18 +7,18 @@
       </div>
     </div>
 
-    <div class="container-middle">
-      <div class="fiche-produit">
-        <p>Fiche produit:</p>
+      <div class="container-middle">
+        <div class="fiche-produit">
+          <p>Fiche produit:</p>
+        </div>
+        <div class="description-show">
+          <p>Description : <strong><%= @costume.description %></strong> </p>
+          <p>Prix/jour : <strong><%= @costume.price_per_day %> € </strong></p>
+          <p>Tailles disponibles : <strong><%= @costume.size %> </strong></p>
+          <p>Adresse du retrait : <strong><%= @costume.address %></strong></p>
+          <p>Nom du loueur : <strong><%= @costume.owner.first_name %> <%= @costume.owner.last_name %></strong></p>
+        </div>
       </div>
-      <div class="description-show">
-        <p>Description : <%= @costume.description %> </p>
-        <p>Prix/jour : <%= @costume.price_per_day %> € </p>
-        <p>Tailles disponibles : <%= @costume.size %> </p>
-        <p>Nom du loueur : <%= @costume.owner.first_name %> <%= @costume.owner.last_name %></p>
-        <p>Adresse du retrait : <%= @costume.address %></p>
-      </div>
-    </div>
 
     <div class="container-form mb-4 container-right">
       <h1>Réservé ce costume dès maintenant</h1>
