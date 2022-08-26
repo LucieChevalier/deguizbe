@@ -54,44 +54,72 @@ user5 = User.create!(
   email: 'Sebastien.brun@gmail.com',
   password: 'SebBrun',
   address: '2 avenue Jean Claude Bonduelle, Nantes 44000'
-  )
+)
 
 puts "Creating costumes..."
 
-piratejack = Costume.create!(
-  name: 'Pirate',
-  price_per_day: 14,
-  description: "Ce déguisement est constitué d'une chemise, d'un gilet, d'un pantacourt, d'un bandana et de sur-bottes",
-  category: 'Pirate',
-  size: 'adulte-L',
-  address: '24 rue Jean Lurcat, Villejuif 94800',
-  owner: user1
+amerindienne = Costume.create!(
+  name: 'Amérindienne',
+  price_per_day: 13,
+  description: "Ce déguisement se compose d'une jupe à franges, d'un collier et d'une perruque à tresses",
+  category: 'Western',
+  size: 'Adulte-M',
+  address: '24 route des coteaux, Divatte sur Loire 44450',
+  owner: user3
 )
 
-file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/167/8/167801/deguisement-pirate-homme_167801_5.jpg")
-piratejack.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-piratejack.save
+file = URI.open("https://www.coti-jouets.fr/12197-large_default/deguisement-indienne-fleur-des-prairies-taille-s.jpg")
+amerindienne.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+amerindienne.save
 
-mariobros = Costume.create!(
-  name: 'Mario',
+asterix = Costume.create!(
+  name: 'Asterix',
+  price_per_day: 16,
+  description: "Ce déguisement est composé d'une tunique et d'un pantalon avec une ceinture, ainsi qu'une gourde et un fourreau.",
+  category: 'Personnage',
+  size: 'Adulte-S',
+  address: '12 villa de la renaissance, Paris 75019',
+  owner: user2
+)
+
+file = URI.open("https://www.ambiance-unic.fr/3069-tm_large_default/deguisement-asterix.jpg")
+asterix.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+asterix.save
+
+cow_boy = Costume.create!(
+  name: 'Cow-Boy',
   price_per_day: 15,
-  description: "Ce déguisement se compose d'une combinaison en mousse, d'une casquette, d'une moustache et d'une paire de gants blancs",
-  category: 'personnage',
-  size: 'adulte-M',
-  address: '24 rue Jean Lurcat, Villejuif 94800',
-  owner: user1
+  description: "Ce déguisement se compose d'un gilet, un sur-pantalon, un bandana et un chapeau de cow-boy.",
+  category: 'Western',
+  size: 'Adulte-M',
+  address: '12 villa de la renaissance, Paris 75019',
+  owner: user2
 )
 
-file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/223/9/223933/deguisement-mario-deluxe-adulte_223933_3.jpg")
-mariobros.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-mariobros.save
+file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/173/5/173586/deguisement-cowboy-homme_173586.jpg")
+cow_boy.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+cow_boy.save
+
+enfant_loup = Costume.create!(
+  name: 'Enfant-Loup',
+  price_per_day: 9,
+  description: 'Ce déguisement comprend une grenouillère, des manchettes, un couvre-pieds et une cagoule',
+  category: 'Personnage',
+  size: 'Enfant',
+  address: '12 villa de la Renaissance, Paris 75019',
+  owner: user2
+)
+
+file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/309/0/309027/deguisement-loup-garcon_309027.jpg")
+enfant_loup.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+enfant_loup.save
 
 linkzelda = Costume.create!(
   name: 'Link',
   price_per_day: 14,
   description: 'Ce déguisement comprend une tunique, une teinture et un bonnet',
-  category: 'personnage',
-  size: 'adulte-S',
+  category: 'Personnage',
+  size: 'Adulte-S',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -100,26 +128,82 @@ file = URI.open("https://static1.funidelia.com/39084-f6_big2/deguisement-link-th
 linkzelda.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
 linkzelda.save
 
-superman = Costume.create!(
-  name: 'Superman',
+mariobros = Costume.create!(
+  name: 'Mario',
   price_per_day: 15,
-  description: "Retrouvez dans ce déguisement une combinaison rembourrée avec ceinture et couvre-bottes, ainsi qu'une cape",
-  category: 'personnage',
-  size: 'adulte-S',
+  description: "Ce déguisement se compose d'une combinaison en mousse, d'une casquette, d'une moustache et d'une paire de gants blancs",
+  category: 'Personnage',
+  size: 'Adulte-M',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
 
-file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/171/6/171655/deguisement-superman-homme_171655_2.jpg")
-superman.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-superman.save
+file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/223/9/223933/deguisement-mario-deluxe-adulte_223933_3.jpg")
+mariobros.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+mariobros.save
+
+mere_noel = Costume.create!(
+  name: 'Mère-Noël',
+  price_per_day: 12,
+  description: 'Ce déguisement comprend une robe-corset et un bonnet de Mère-Noël.',
+  category: 'Uniforme',
+  size: 'Adulte-S',
+  address: '12 villa de la renaissance, Paris 75019',
+  owner: user2
+)
+
+file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/201/7/201772/deguisement-mere-noel-femme_201772.jpg")
+mere_noel.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+mere_noel.save
+
+pikachu = Costume.create!(
+  # photo: 'https://cdn.deguisetoi.fr/images/rep_art/moy_v5/32…isement-bonhomme-jaune-electrique-bebe_328015.jpg',
+  name: 'Pikachu',
+  price_per_day: 9,
+  description: "Ce déguisement est composé d'une simple combinaison à queue",
+  category: 'Personnage',
+  size: 'Enfant',
+  address: '24 route des coteaux, Divatte sur Loire 44450',
+  owner: user3
+)
+
+file = URI.open("https://www.feter-recevoir.com/upload/image/deguisement-pikachu-bebe-p-image-178360-grande.jpg")
+pikachu.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+pikachu.save
+
+pilotedeligne = Costume.create!(
+  name: 'Pilote - Top Gun',
+  price_per_day: 14,
+  description: "Ce déguisement est composé d'une combinaison à blasons et d'une paire de lunettes de soleil et de rangers",
+  category: 'Uniforme',
+  size: 'Adulte-M', address: '24 route des coteaux, Divatte sur Loire 44450',
+  owner: user3
+)
+
+file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/172/4/172429/deguisement-pilote-de-ligne-top-gun-homme_172429.jpg")
+pilotedeligne.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+pilotedeligne.save
+
+piratejack = Costume.create!(
+  name: 'Pirate',
+  price_per_day: 14,
+  description: "Ce déguisement est constitué d'une chemise, d'un gilet, d'un pantacourt, d'un bandana et de sur-bottes",
+  category: 'Pirate',
+  size: 'Adulte-L',
+  address: '24 rue Jean Lurcat, Villejuif 94800',
+  owner: user1
+)
+
+file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/167/8/167801/deguisement-pirate-homme_167801_5.jpg")
+piratejack.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+piratejack.save
 
 piratemarron = Costume.create!(
   name: 'Femme Pirate - marron',
   price_per_day: 14,
   description: "Retrouvez dans ce déguisement un chapeau ainsi qu'un pantalon et un baudrier",
-  category: 'pirate',
-  size: 'adulte-S',
+  category: 'Pirate',
+  size: 'Adulte-S',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -132,8 +216,8 @@ piratenoir = Costume.create!(
   name: 'Femme Pirate - noir',
   price_per_day: 14,
   description: 'Ce déguisemnt comprend une robe-corset et un bandana.',
-  category: 'pirate',
-  size: 'adulte-L',
+  category: 'Pirate',
+  size: 'Adulte-L',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -146,8 +230,8 @@ piraterayures = Costume.create!(
   name: 'Pirate',
   price_per_day: 15,
   description: 'Retrouvez dans ce déguisement une chemise et un gilet, un pantacourt, un bandeau, des manchettes et 2 couvre-bottes.',
-  category: 'pirate',
-  size: 'adulte-M',
+  category: 'Pirate',
+  size: 'Adulte-M',
   address: '24 rue Jean Lurcat, Villejuif 94800',
   owner: user1
 )
@@ -155,76 +239,6 @@ piraterayures = Costume.create!(
 file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/225/2/225219/deguisement-pirate-a-rayures-homme_225219.jpg")
 piraterayures.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
 piraterayures.save
-
-asterix = Costume.create!(
-  name: 'Asterix',
-  price_per_day: 16,
-  description: "Ce déguisement est composé d'une tunique et d'un pantalon avec une ceinture, ainsi qu'une gourde et un fourreau.",
-  category: 'personnage',
-  size: 'adulte-S',
-  address: '12 villa de la renaissance, Paris 75019',
-  owner: user2
-  )
-
-file = URI.open("https://www.ambiance-unic.fr/3069-tm_large_default/deguisement-asterix.jpg")
-asterix.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-asterix.save
-
-cow_boy = Costume.create!(
-  name: 'Cow-Boy',
-  price_per_day: 15,
-  description: "Ce déguisement se compose d'un gilet, un sur-pantalon, un bandana et un chapeau de cow-boy.",
-  category: 'western',
-  size: 'adulte-M',
-  address: '12 villa de la renaissance, Paris 75019',
-  owner: user2
-)
-
-file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/173/5/173586/deguisement-cowboy-homme_173586.jpg")
-cow_boy.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-cow_boy.save
-
-mere_noel = Costume.create!(
-  name: 'Mère-Noël',
-  price_per_day: 12,
-  description: 'Ce déguisement comprend une robe-corset et un bonnet de Mère-Noël.',
-  category: 'uniforme',
-  size: 'adulte-S',
-  address: '12 villa de la renaissance, Paris 75019',
-  owner: user2
-)
-
-file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/201/7/201772/deguisement-mere-noel-femme_201772.jpg")
-mere_noel.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-mere_noel.save
-
-enfant_loup = Costume.create!(
-  name: 'Enfant-Loup',
-  price_per_day: 9,
-  description: 'Ce déguisement comprend une grenouillère, des manchettes, un couvre-pieds et une cagoule',
-  category: 'personnage',
-  size: 'Enfant',
-  address: '12 villa de la Renaissance, Paris 75019',
-  owner: user2
-)
-
-file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/309/0/309027/deguisement-loup-garcon_309027.jpg")
-enfant_loup.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-enfant_loup.save
-
-prisonnier = Costume.create!(
-  name: 'Prisonnière',
-  price_per_day: 13,
-  description: 'Ce déguisemnt inclut une blouse avec un badge et un pantalon assorti',
-  category: 'uniforme',
-  size: 'adulte-S',
-  address: '2 rue de la Marne, Nantes 44000',
-  owner: user3
-)
-
-file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/233/1/233179/deguisement-prisonnier-adulte_233179_1.jpg")
-prisonnier.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-prisonnier.save
 
 princessezelda = Costume.create!(
   # photo:')',
@@ -236,52 +250,37 @@ princessezelda = Costume.create!(
   address: '24 route des coteaux, Divatte sur Loire 44450',
   owner: user3
 )
-
 file = URI.open("https://imaginaire.com/fr/images/THE-LEGEND-OF-ZELDA-COSTUME-DE-ZELDA-DELUXE-ADULTE__DI98796-Z.JPG")
 princessezelda.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
 princessezelda.save
 
-pilotedeligne = Costume.create!(
-  name: 'Pilote - Top Gun',
-  price_per_day: 14,
-  description: "Ce déguisement est composé d'une combinaison à blasons et d'une paire de lunettes de soleil",
-  category: 'uniforme',
-  size: 'adulte-M', address: '24 route des coteaux, Divatte sur Loire 44450',
-  owner: user3
-)
-
-file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/172/4/172429/deguisement-pilote-de-ligne-top-gun-homme_172429.jpg")
-pilotedeligne.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-pilotedeligne.save
-
-amerindienne = Costume.create!(
-  name: 'Amérindienne',
+prisonnier = Costume.create!(
+  name: 'Prisonnière',
   price_per_day: 13,
-  description: "Ce déguisement se compose d'une jupe à franges, d'un collier et d'une perruque à tresses",
-  category: 'western',
-  size: 'adulte-M',
-  address: '24 route des coteaux, Divatte sur Loire 44450',
+  description: 'Ce déguisemnt inclut une blouse avec un badge et un pantalon assorti',
+  category: 'Uniforme',
+  size: 'Adulte-S',
+  address: '2 rue de la Marne, Nantes 44000',
   owner: user3
 )
 
-file = URI.open("https://www.coti-jouets.fr/12197-large_default/deguisement-indienne-fleur-des-prairies-taille-s.jpg")
-amerindienne.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-amerindienne.save
+file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/233/1/233179/deguisement-prisonnier-adulte_233179_1.jpg")
+prisonnier.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+prisonnier.save
 
-pikachu = Costume.create!(
-  # photo: 'https://cdn.deguisetoi.fr/images/rep_art/moy_v5/32…isement-bonhomme-jaune-electrique-bebe_328015.jpg',
-  name: 'Pikachu',
-  price_per_day: 9,
-  description: "Ce déguisement est composé d'une simple combinaison à queue",
-  category: 'personnage',
-  size: 'Enfant',
-  address: '24 route des coteaux, Divatte sur Loire 44450',
-  owner: user3
+superman = Costume.create!(
+  name: 'Superman',
+  price_per_day: 15,
+  description: "Retrouvez dans ce déguisement une combinaison rembourrée avec ceinture et couvre-bottes, ainsi qu'une cape",
+  category: 'Personnage',
+  size: 'Adulte-S',
+  address: '24 rue Jean Lurcat, Villejuif 94800',
+  owner: user1
 )
 
-file = URI.open("https://www.feter-recevoir.com/upload/image/deguisement-pikachu-bebe-p-image-178360-grande.jpg")
-pikachu.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
-pikachu.save
+file = URI.open("https://cdn.deguisetoi.fr/images/rep_art/moy_v5/171/6/171655/deguisement-superman-homme_171655_2.jpg")
+superman.photo.attach(io: file, filename: "costume-1.png", content_type: "image/png")
+superman.save
 
 puts "Creating reservations..."
 
