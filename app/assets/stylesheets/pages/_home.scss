@@ -3,6 +3,7 @@ body, html {
   background: white;
   position: relative;
   min-height: 100vh;
+  background-color: $grey-background;
 }
 .banner {
   padding: 150px 0;
@@ -33,14 +34,3 @@ body, html {
 .button-home {
   margin-top: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
