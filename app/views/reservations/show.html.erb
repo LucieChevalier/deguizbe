@@ -1,47 +1,47 @@
-<div class="container">
-  <div class="mb-4">
-    <h1>Vous avez sélectionné <%=@costume.name%>, excellent choix !</h1>
-    <h2>Le propriétaire va maintenant examiner votre demande</h2>
+<body class="body-confirm">
+
+<div class="container-resa">
+  <div class="title-resa-div">
+    <h1 class="resa-title">Vous avez sélectionné <%=@costume.name%>, excellent choix !</h1>
+    <h2 class="resa-sous-title">Le propriétaire va maintenant examiner votre demande</h2>
   </div>
 
-  <div class="confirmation-grid">
+  <div class="confirmation-container">
 
-    <div class="confirmation-grid-one">
+    <div class="left-resa-description">
       <%= cl_image_tag @costume.photo.key, height: 800, width: 600, crop: :fit %>
     </div>
 
-    <div class="confirmation-grid-two d-flex flex-column justify-content-around">
+    <div class="border-left"></div>
 
-      <ul class="list-unstyled m-4">
-        <div class="align-self-start">
-          <li class="p-4">
-            <i class="fa-solid fa-calendar-days fa-2xl"></i>
-            <%=l(@reservation.start_date, format: "%A %-d %b")%>
-            <i class="fa-solid fa-calendar-days fa-2xl"></i>
-            <%=l(@reservation.end_date, format: "%A %-d %b")%>
-          </li>
-        </div>
-        <li class="p-4">
-          <%=@costume.description%>
-        </li>
-        <li class="p-4">
-          <%if @current_user.address != ""%>
-            <i class="fa-solid fa-location-arrow fa-2xl"></i>
-            <%=@current_user.address%>
-          <%end%>
-        </li>
-        <li class="p-4">
-          <i class="fa-solid fa-note-sticky fa-2xl"></i>
-          <%=@reservation.comment%>
-        </li>
+    <div class="right-resa-description">
 
-
-      </ul>
-
-      <div class= "align-self-center">
-        <h2><strong>Total</strong> <%=@reservation.total_amount%><i class="fa-solid fa-euro-sign"></i></h2>
+      <div class="inter">
+        <i class="fa-solid fa-calendar-days fa-2xl"></i>
+        <p>Dû <%=l(@reservation.start_date, format: "%A %-d %b")%> au <%=l(@reservation.end_date, format: "%A %-d %b")%></p>
       </div>
 
+      <div class="inter">
+        <%if @current_user.address != ""%>
+          <i class="fa-solid fa-location-arrow fa-2xl"></i>
+          <p><%=@current_user.address%></p>
+        <%end%>
+      </div>
+
+      <div class="inter">
+        <i class="fa-solid fa-circle-info"></i>
+        <p><%=@costume.description%></p>
+      </div>
+
+      <div class="inter">
+        <i class="fa-solid fa-note-sticky fa-2xl"></i>
+        <p><%=@reservation.comment%></p>
+      </div>
+
+      <div class="total-flex">
+        <strong>Total :</strong> <h2 class="price-resa"><%=@reservation.total_amount%><i class="fa-solid fa-euro-sign"></h2></i>
+      </div>
     </div>
-  </div>
+
 </div>
+</body>
