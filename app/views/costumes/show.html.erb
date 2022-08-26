@@ -9,7 +9,7 @@
 
       <div class="container-middle">
         <div class="fiche-produit">
-          <p>Fiche produit:</p>
+          <p>Fiche produit</p>
         </div>
         <div class="description-show">
           <p>Description : <strong><%= @costume.description %></strong> </p>
@@ -35,7 +35,6 @@
         </div>
 
         <%= f.input :address, value: @costume.address, required: true %>
-        <%= f.input :comment, hint: "Préciser la taille" %>
 
         <div class="form-actions text-center container-right">
           <%= f.submit "Réserver", class: "btn btn-primary btn-show" %>
